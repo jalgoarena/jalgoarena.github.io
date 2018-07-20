@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfc66a03-f74f-4a97-9e75-94a58f0ca905" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/favicons/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo/layouts/partials/favicon.html" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/layouts/partials/favicon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/layouts/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/static/img/common/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/static/img/common/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/static/img/common/logx2.png" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/static/img/common/logx2.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,18 +41,22 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="78" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="78" />
+            <state relative-caret-position="90">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hugo/layouts/partials/header.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="105" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="favicon.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="favicon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hugo/layouts/partials/favicon.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -114,8 +120,9 @@
         <option value="$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html" />
         <option value="$PROJECT_DIR$/hugo/config.toml" />
         <option value="$PROJECT_DIR$/hugo/deploy.sh" />
-        <option value="$PROJECT_DIR$/hugo/layouts/index.html" />
         <option value="$PROJECT_DIR$/hugo/layouts/partials/favicon.html" />
+        <option value="$PROJECT_DIR$/hugo/layouts/index.html" />
+        <option value="$PROJECT_DIR$/hugo/layouts/partials/header.html" />
       </list>
     </option>
   </component>
@@ -192,7 +199,7 @@
               <item name="hugo" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="favicons" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -223,11 +230,11 @@
       <recent name="$PROJECT_DIR$/hugo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hugo/static/img/common" />
       <recent name="$PROJECT_DIR$/hugo/static/img/favicons" />
       <recent name="$PROJECT_DIR$/hugo" />
       <recent name="$PROJECT_DIR$/hugo/static" />
       <recent name="$PROJECT_DIR$/hugo/layouts" />
-      <recent name="$PROJECT_DIR$/hugo/themes/kube/static/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -254,7 +261,7 @@
       <updated>1532108072185</updated>
       <workItem from="1532108073355" duration="37000" />
       <workItem from="1532108120749" duration="1254000" />
-      <workItem from="1532109386293" duration="3976000" />
+      <workItem from="1532109386293" duration="4913000" />
     </task>
     <task id="LOCAL-00001" summary="Very initial version">
       <created>1532108921336</created>
@@ -267,7 +274,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5267000" />
+    <option name="totallyTimeSpent" value="6204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -570,26 +577,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/layouts/partials/header.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/favicons/logo-384x384.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/hugo/static/img/favicons/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="78" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/layouts/partials/favicon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="74" selection-start-column="74" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/layouts/partials/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="105" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
         </state>
       </provider>
     </entry>
