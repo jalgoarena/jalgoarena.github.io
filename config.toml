@@ -1,0 +1,26 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "JAlgoArena Home"
+theme = "kube"
+description = "JAlgoArena is a programming contest platform which is actually a great alternative to portals like HackerRank - you have full control over hosting and running it and it's all for free!"
+Paginate = 4
+[Params]
+  RSSLink = "/index.xml"
+  author = "JAlgoArena" # add your company name
+  github = "jalgoarena" # add your github profile name
+  twitter = "jacek_spolnik" # add your twitter profile
+  email = "jacek.spolnik@gmail.com"
+
+[[menu.main]]
+    name = "Docs"
+    weight = -100
+    url = "/docs/"
+[[menu.main]]
+    name = "Blog"
+    weight = -100
+    url = "/blog/"
+[[menu.main]]
+    name = "Faq"
+    weight = -100
+    url = "/faq/"
+
