@@ -2,8 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfc66a03-f74f-4a97-9e75-94a58f0ca905" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/hugo/themes/kube" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/themes/kube" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/docs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/faq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/list-docs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/post.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/signin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/images/tn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/_default/baseof.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/_default/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/_default/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/blog/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/docs/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/favicon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/meta/name-author.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/meta/ogimage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/page-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/byauthor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/category-link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/meta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/related-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/tag-link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/scripts/animation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/site-verification.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/toc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/section/docs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/layouts/section/faq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/font.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/highlight.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.legenda.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/css/master.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Black.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-BoldItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Semibold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-SemiboldItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/common/icon-twitter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/common/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/common/logx2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/favicons/logo-384x384.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/icon-editor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/icon-minimalism.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/icon-typo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/brand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-baseline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-editor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-minimalism.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-typo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/typography/01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/typography/02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/js/jquery-2.1.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/js/kube.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/js/kube.legenda.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/js/kube.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/js/master.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo/static/js/tocbot.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/themes/kube" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,101 +84,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.toml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.toml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hugo/config.toml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_index.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/content/_index.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="90">
-                <caret line="6" selection-start-line="6" selection-end-line="6" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
+      <file leaf-file-name="icon-minimalism.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/icon-minimalism.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="blog.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/archetypes/blog.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="15">
-                <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
+      <file leaf-file-name="logo-384x384.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/favicons/logo-384x384.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="default.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/archetypes/default.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
+      <file leaf-file-name="logx2.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/common/logx2.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="docs.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/archetypes/docs.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
+      <file leaf-file-name="logo.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/common/logo.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="theme.toml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/themes/kube/theme.toml">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo/layouts/_default/list.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="single.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/blog/single.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-            </state>
-          </provider>
+      <file leaf-file-name="font.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo/static/css/font.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="117" column="162" selection-start-line="117" selection-start-column="162" selection-end-line="117" selection-end-column="162" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-              <folding>
-                <element signature="e#431#437#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="icon-twitter.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/common/icon-twitter.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -141,9 +155,9 @@
         <option value="$PROJECT_DIR$/config.toml" />
         <option value="$PROJECT_DIR$/deploy.sh" />
         <option value="$PROJECT_DIR$/hugo/deploy.sh" />
-        <option value="$PROJECT_DIR$/hugo/config.toml" />
         <option value="$PROJECT_DIR$/hugo/themes/kube/layouts/index.html" />
         <option value="$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html" />
+        <option value="$PROJECT_DIR$/hugo/config.toml" />
       </list>
     </option>
   </component>
@@ -160,6 +174,9 @@
     <option name="y" value="27" />
     <option name="width" value="1910" />
     <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -179,19 +196,6 @@
               <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="hugo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="hugo" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="hugo" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="kube" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -210,7 +214,11 @@
       <recent name="$PROJECT_DIR$/hugo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content" />
+      <recent name="$PROJECT_DIR$/hugo" />
+      <recent name="$PROJECT_DIR$/hugo/static" />
+      <recent name="$PROJECT_DIR$/hugo/layouts" />
+      <recent name="$PROJECT_DIR$/hugo/themes/kube/static/img" />
+      <recent name="$PROJECT_DIR$/hugo/themes/kube/static/img/kube" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -237,7 +245,7 @@
       <updated>1532108072185</updated>
       <workItem from="1532108073355" duration="37000" />
       <workItem from="1532108120749" duration="1254000" />
-      <workItem from="1532109386293" duration="2285000" />
+      <workItem from="1532109386293" duration="3386000" />
     </task>
     <task id="LOCAL-00001" summary="Very initial version">
       <created>1532108921336</created>
@@ -250,7 +258,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3576000" />
+    <option name="totallyTimeSpent" value="4677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -305,37 +313,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Very initial version" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hugo/config.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/content/blog/welcome.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/content/blog/typography.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/content/blog/prototyping.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/content/blog/messages.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -488,13 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/config.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/archetypes/blog.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -521,9 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/theme.toml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/blog/single.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -538,20 +505,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        <state relative-caret-position="270">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="e#431#437#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/docs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/faq.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/list-docs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/post.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/screenshot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/signin.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/images/tn.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/kube/brand.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/kube/icon-minimalism.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/kube/icon-editor.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/kube/icon-baseline.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/kube/icon-typo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/icon-typo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/icon-minimalism.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/favicons/logo-384x384.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/common/logx2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/common/icon-twitter.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/common/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/static/img/kube/icon-editor.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/static/img/kube/icon-typo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/layouts/_default/list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/themes/kube/theme.toml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/static/css/font.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

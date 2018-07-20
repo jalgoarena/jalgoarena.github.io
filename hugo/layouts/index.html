@@ -1,0 +1,56 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div id="main">
+  <div id="hero">
+    <h1>{{.Title}}</h1>
+    <p>{{.Description}}</p>
+  </div>
+  <div id="action-buttons">
+    <a class="button outline big" href="https://github.com/jalgoarena/jalgoarena" onclick="_gaq.push(['_trackEvent', 'jalgoarena', 'github']);">View on Github</a>
+    <p>GitHub home page, it describes all JAlgoArena microservices and how to download them</p>
+  </div>
+  <div id="kube-features">
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <figure>
+          <img alt="Baseline" height="48" src="{{ "/img/kube/icon-baseline.png" | relURL }}" width="48">
+        </figure>
+        <h3>Highly Available storage</h3>
+        <p>JAlgoArena is using <a href="http://kafka.apache.org/">Apache Kafka</a> and <a href="https://www.cockroachlabs.com/">CockroachDB</a> for highly available and cloud friendly persistent data store.</p>
+      </div>
+      <div class="col col-4 item">
+        <figure>
+          <img alt="Typography" height="48" src="{{ "/img/kube/icon-typo.png" | relURL }}" width="48">
+        </figure>
+        <h3>Java code editor</h3>
+        <p>You will find embedded java code editor with highligting onboard.</p>
+      </div>
+      <div class="col col-4 item">
+        <figure>
+          <img alt="Minimalism" height="48" src="{{ "/img/kube/icon-minimalism.png" | relURL }}" width="48">
+        </figure>
+        <h3>Minimalism</h3>
+        <p>We strongly believe in minimalism as a general concept as well as a practical approach to everyday life.</p>
+      </div>
+    </div>
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <h4>Developer friendly</h4>
+        <p>Every element in JAlgoArena is created by developers for developers - you will quickly get how to use it.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>Cross-browser</h4>
+        <p>JAlgoArena works in all modern browsers, both desktop and mobile, including latest Chrome, Firefox, Safari, Opera, IE and Edge.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>License</h4>
+        <p>Kube licensed under <a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>.<br>
+      JAlgoArena is absolutely free for personal or commercial use.</p>
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} {{end}}
