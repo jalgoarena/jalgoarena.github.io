@@ -4,6 +4,7 @@ title = "JAlgoArena Home"
 theme = "kube"
 description = "JAlgoArena is a programming contest platform which is actually a great alternative to portals like HackerRank - you have full control over hosting and running it and it's all for free!"
 Paginate = 4
+publishDir = "../"
 [Params]
   RSSLink = "/index.xml"
   author = "JAlgoArena" # add your company name
