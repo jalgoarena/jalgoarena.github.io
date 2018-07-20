@@ -2,75 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfc66a03-f74f-4a97-9e75-94a58f0ca905" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/hugo/images/docs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/images/faq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/images/list-docs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/images/post.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/images/screenshot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/images/signin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/images/tn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/_default/baseof.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/_default/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/_default/single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/blog/single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/docs/single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/favicon.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/meta/name-author.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/meta/ogimage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/page-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/byauthor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/category-link.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/meta.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/related-content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/post/tag-link.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/scripts/animation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/site-verification.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/partials/toc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/section/docs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/layouts/section/faq.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/highlight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.legenda.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/kube.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/css/master.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-BoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-Semibold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/font/Lato-SemiboldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/common/icon-twitter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/common/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/common/logx2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/favicons/logo-384x384.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/icon-editor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/icon-minimalism.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/icon-typo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/brand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-baseline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-editor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-minimalism.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/icon-typo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/typography/01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/img/kube/typography/02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/js/jquery-2.1.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/js/kube.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/js/kube.legenda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/js/kube.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/js/master.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hugo/static/js/tocbot.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo/themes/kube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/collapse/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/collapse/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/inline-style/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/inline-style/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/messages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/messages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/prototyping/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/prototyping/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/typography/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/typography/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/welcome/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/welcome/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/design/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/design/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/general/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/general/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/company/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faq/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/example/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/example/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/hugo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/hugo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/markdown/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/markdown/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/prototype/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/prototype/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,11 +37,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.toml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.toml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hugo/config.toml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo/deploy.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -154,10 +125,11 @@
         <option value="$PROJECT_DIR$/content/company.md" />
         <option value="$PROJECT_DIR$/config.toml" />
         <option value="$PROJECT_DIR$/deploy.sh" />
-        <option value="$PROJECT_DIR$/hugo/deploy.sh" />
         <option value="$PROJECT_DIR$/hugo/themes/kube/layouts/index.html" />
         <option value="$PROJECT_DIR$/hugo/themes/kube/layouts/partials/footer.html" />
         <option value="$PROJECT_DIR$/hugo/config.toml" />
+        <option value="$PROJECT_DIR$/hugo/deploy.sh" />
+        <option value="$PROJECT_DIR$/hugo/layouts/index.html" />
       </list>
     </option>
   </component>
@@ -195,6 +167,12 @@
               <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="hugo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,7 +223,7 @@
       <updated>1532108072185</updated>
       <workItem from="1532108073355" duration="37000" />
       <workItem from="1532108120749" duration="1254000" />
-      <workItem from="1532109386293" duration="3386000" />
+      <workItem from="1532109386293" duration="3559000" />
     </task>
     <task id="LOCAL-00001" summary="Very initial version">
       <created>1532108921336</created>
@@ -258,7 +236,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4677000" />
+    <option name="totallyTimeSpent" value="4850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -313,14 +291,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Very initial version" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hugo/content/blog/messages.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/content/blog/inline-style.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -387,13 +357,6 @@
             <caret line="17" selection-start-line="17" selection-end-line="17" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -595,6 +558,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
         </state>
       </provider>
     </entry>
