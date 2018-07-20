@@ -7,7 +7,7 @@ weight = 20
 draft = false
 +++
 
-## Welcome to JAlgoArena – an open source algorithmic contest platform
+### Welcome to JAlgoArena – an open source algorithmic contest platform
 
 Hi there and welcome to JAlgoArena - this is first post just to mark the start point! There is lots of interesting technical
 considerations which are part of building such platform - especially if you have cloud native, high availability topics
