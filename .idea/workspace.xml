@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfc66a03-f74f-4a97-9e75-94a58f0ca905" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo/content/docs/quick-start.md" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/content/docs/quick-start.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/layouts/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="82" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
+            <state relative-caret-position="405">
+              <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -87,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quick-start.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="quick-start.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hugo/content/docs/quick-start.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
@@ -154,12 +153,12 @@
         <option value="$PROJECT_DIR$/hugo/layouts/partials/favicon.html" />
         <option value="$PROJECT_DIR$/hugo/layouts/partials/header.html" />
         <option value="$PROJECT_DIR$/hugo/archetypes/blog.md" />
-        <option value="$PROJECT_DIR$/hugo/layouts/index.html" />
         <option value="$PROJECT_DIR$/hugo/layouts/blog/single.html" />
         <option value="$PROJECT_DIR$/hugo/layouts/docs/single.html" />
         <option value="$PROJECT_DIR$/hugo/content/blog/welcome.md" />
         <option value="$PROJECT_DIR$/hugo/layouts/_default/list.html" />
         <option value="$PROJECT_DIR$/hugo/content/docs/quick-start.md" />
+        <option value="$PROJECT_DIR$/hugo/layouts/index.html" />
       </list>
     </option>
   </component>
@@ -202,21 +201,7 @@
               <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="hugo" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="hugo" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jalgoarena.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jalgoarena.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="hugo" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -389,7 +374,7 @@
       <updated>1532108072185</updated>
       <workItem from="1532108073355" duration="37000" />
       <workItem from="1532108120749" duration="1254000" />
-      <workItem from="1532109386293" duration="9500000" />
+      <workItem from="1532109386293" duration="9705000" />
     </task>
     <task id="LOCAL-00001" summary="Very initial version">
       <created>1532108921336</created>
@@ -402,7 +387,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10791000" />
+    <option name="totallyTimeSpent" value="10996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -666,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="82" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hugo/layouts/blog/single.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -744,6 +722,13 @@
             <caret line="72" column="77" selection-start-line="72" selection-start-column="77" selection-end-line="72" selection-end-column="77" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
         </state>
       </provider>
     </entry>
