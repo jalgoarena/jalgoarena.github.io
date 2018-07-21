@@ -47,3 +47,31 @@ After you open JAlgoArena Web UI - you will see below page.
 Click on learn more, which will move you to problems page. In here you can see all available problems for solving, with difficulty level assigned.
 
 ![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/problems.png)
+
+Ok, let's click now on one of the problems, famous fibonacci problem (you have to create account and sign in before).
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/fib.png)
+
+... and scrolling down ...
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/fib_2.png)
+
+Ok, let's run empty code - and go to submissions ...
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/submissions.png)
+
+... whoops! Something went wrong - let's check what ...
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/compile_error.png)
+
+Yep right 😊 Let's check again source code we have submitted ...
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/source_code.png)
+
+Seems obvious now 😊 As we run empty method which expected to return some value ... you see now. Ok, let's check ranking!
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/ranking.png)
+
+Seems Kraków is leading competition 😊
+
+That's it for now 🐣!
