@@ -6,10 +6,20 @@
     <description>Recent content in General on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jul 2018 21:27:50 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jul 2018 07:42:36 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/categories/general/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Continuous Delivery</title>
+      <link>https://jalgoarena.github.io/blog/continuous-delivery/</link>
+      <pubDate>Wed, 25 Jul 2018 07:42:36 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/continuous-delivery/</guid>
+      <description>Key factor to JAlgoArena development – ubiquitous automation Nowadays we software engineers are in common agreement - automation is key to success an DevOps movement just proves that. The goal of developing JAlgoArena from the very beginning was to make as much of automated deployment as possible - and in this post I want to explain how does it look like.
+Deployment flow  Initially, developer push his changes to GitHub In next stage, GitHub notifies Travis CI about changes Travis CI runs whole continuous integration flow, running compilation, tests and generating reports  coverage report is sent to Codecov using Gradle script builds and publishes new docker image for new tags (releases) zip package is saved to GitHub releases for new tags (releases)  Nomad jobs takes artifact and deploy/scale automatically JAlgoArena components  docker images for docker based environment zip packages for non-docker based environment   Continuous Delivery diagram Possible improvements For now there is still couple of manual steps, some of them are such by design, others where yet not replaced:</description>
+    </item>
     
     <item>
       <title>Welcome to JAlgoArena</title>
