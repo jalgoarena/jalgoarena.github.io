@@ -6,7 +6,7 @@
     <description>Recent content in Docs on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Jul 2018 19:22:55 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jul 2018 07:31:44 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,17 @@
       <guid>https://jalgoarena.github.io/docs/quick-start/</guid>
       <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
  Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>Architecture</title>
+      <link>https://jalgoarena.github.io/docs/architecture/</link>
+      <pubDate>Wed, 25 Jul 2018 07:31:44 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/architecture/</guid>
+      <description>Intro JAlgoArena conducts many parts, which can be divided to:
+ Node.JS hosted Web UI Traefik as Edge Service Nomad as scheduler Consul for Service Discovery Apache Kafka used for messaging internally in the backend Elastic Stack for capturing distributed logs Cockroach DB for highly available data storage JAlgoArena microservices delivering core features  Diagram Components JAlgoArena microservices:
+ JAlgoArena UI - host UI components, runs reverse proxy using Service Discovery for resolving edge service JAlgoArena Auth Server - microservice responsible for authentication and storing users data JAlgoArena Queue - microservice serving queue for incoming submissions, publishing them to Apache Kafka JAlgoArena Submissions - microservice storing all submissions and serving data based on collected data JAlgoArena Judge - main microservice responsible for judging incoming submissions JAlgoArena Ranking - microservice focused on building ranking from successful submissions (ranking storage) JAlgoArena Events - microservice responsible for publishing events about submissions or ranking refreshes  </description>
     </item>
     
     <item>
