@@ -9,7 +9,7 @@ bref = "As a complete and highly performant algorithmic contest platform, JAlgoA
 
 <h3 class="section-head" id="h-basic-template"><a href="#h-basic-template">Deploy with Docker & Nomad</a></h3>
 
-<p>To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine</p>
+To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
 
 1. Make sure Docker is available on your machines
 1. Install Consul and Nomad clusters
