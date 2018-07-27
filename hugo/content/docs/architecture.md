@@ -25,6 +25,13 @@ JAlgoArena conducts many parts, which can be divided to:
 
 ![Component Diagram](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/component_diagram.png)
 
+1. Publish submission to Kafka.
+1. Save new submission (JAlgoArena-Submissions) & start judge process (JAlgoArena-Judge)
+   1. Request submissions refresh via WebSocket subscriptions (JAlgoArena-Submissions)
+1. Publish submission result
+1. Store submission and ranking result (the second only if submission is accepted)
+1. Request ranking & submissions refresh via WebSocket subscriptions
+
 <h3 class="section-head" id="h-components"><a href="#h-components">Components</a></h3>
 
 JAlgoArena microservices:

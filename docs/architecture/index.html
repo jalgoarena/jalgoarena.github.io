@@ -156,6 +156,18 @@ headingSelector: 'h3'
 
 <p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/component_diagram.png" alt="Component Diagram" /></p>
 
+<ol>
+<li>Publish submission to Kafka.</li>
+<li>Save new submission (JAlgoArena-Submissions) &amp; start judge process (JAlgoArena-Judge)
+
+<ol>
+<li>Request submissions refresh via WebSocket subscriptions (JAlgoArena-Submissions)</li>
+</ol></li>
+<li>Publish submission result</li>
+<li>Store submission and ranking result (the second only if submission is accepted)</li>
+<li>Request ranking &amp; submissions refresh via WebSocket subscriptions</li>
+</ol>
+
 <h3 class="section-head" id="h-components"><a href="#h-components">Components</a></h3>
 
 <p>JAlgoArena microservices:</p>
