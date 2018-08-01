@@ -74,4 +74,12 @@ Seems obvious now 😊 As we run empty method which expected to return some valu
 
 Seems Kraków is leading competition 😊
 
+Ok, after some effort and few days spent, let's check how my profile looks like!
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/profile_1.png)
+
+... and how about my submissions ...
+
+![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/profile_2.png)
+
 That's it for now 🐣!
