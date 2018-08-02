@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.44" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Getting Started </title>
+
+  
+  <meta name="description" content="Up and running in 10 minutes"> 
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="JAlgoArena">
+
+
+  <meta property="og:title" content="Getting Started" />
+<meta property="og:description" content="Up and running in 10 minutes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jalgoarena.github.io/docs/getting-started/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="https://jalgoarena.github.io/docs/getting-started/">  
+
+  <link rel="shortcut icon" type="image/png" href="/img/favicons/favicon.ico">
+
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.demo.css" rel="stylesheet" type="text/css">
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">JAlgoArena Home</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home"><img alt="Baseline" src="/img/common/logx2.png" width="120"></a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog/" >Blog</a></li>
+    
+    <li><a href="/docs/" >Docs</a></li>
+    
+    <li><a href="/faq/" >Faq</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h2> Getting Started </h2>
+      <p class="hero-lead">
+           As a complete and highly performing algorithmic contest platform, JAlgoArena is here to help you get the most out of your own hosted contest. JAlgoArena comes with predefined problems (100+) to solve with different difficulty levels - software engineers with different skillset will be able to tackle problems meeting their skills. Starting up with JAlgoArena is fast and easy. Here's how to set up JAlgoArena, and what basic prerequisites are required..
+      </p>
+
+    </div> 
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h3'
+})
+}
+);
+</script>
+
+
+
+    <h3 class="section-head" id="h-basic-template"><a href="#h-basic-template">Deploy with Docker & Nomad</a></h3>
+
+<p>To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.</p>
+
+<ol>
+<li>Make sure Docker is available on your machines</li>
+<li>Install Consul and Nomad clusters
+
+<ul>
+<li>use <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step0.sh">step0.sh</a> to run locally on your laptop - it&rsquo;s not recommended for production use case</li>
+<li><a href="https://www.consul.io/intro/getting-started/join.html">Install Consul Cluster</a></li>
+<li><a href="https://www.nomadproject.io/intro/getting-started/cluster.html">Install Nomad Cluster</a></li>
+</ul></li>
+<li>Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:
+
+<ul>
+<li>Clone JAlgoArena-Nomad locally <code>git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git</code></li>
+<li>go to cloned repo, and run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step1.sh">./step1.sh</a> - this will run all necessary tools
+
+<ul>
+<li>make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI</li>
+</ul></li>
+</ul></li>
+<li>Run JAlgoArena microservices:
+
+<ul>
+<li>go to cloned repo, and run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step2.sh">./step2.sh</a> - this will run all microservices</li>
+<li>after verifying all Nomad jobs are running and healthy within Consul - open JAlgoArena Web UI
+
+<ul>
+<li>if you are on machine where it&rsquo;s hosted - <a href="http://localhost:3000">http://localhost:3000</a></li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h3 class="section-head" id="h-supported-browsers"><a href="#h-supported-browsers">Supported Browsers</a></h3>
+
+<p><p>JAlgoArena supports the latest, stable releases of all major browsers:</p>
+<ul>
+    <li>Latest Chrome</li>
+    <li>Latest Firefox</li>
+    <li>Latest Safari</li>
+    <li>Latest Opera</li>
+    <li>Microsoft Edge</li>
+    <li>Internet Explorer 11</li>
+</ul></p>
+
+<h3 class="section-head" id="h-development"><a href="#h-development">Solving a first problem</a></h3>
+
+<p>After you open JAlgoArena Web UI - you will see below page.</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/home.png" alt="" /></p>
+
+<p>Click on learn more, which will move you to problems page. In here you can see all available problems for solving, with difficulty level assigned.</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/problems.png" alt="" /></p>
+
+<p>Ok, let&rsquo;s click now on one of the problems, famous fibonacci problem (you have to create account and sign in before).</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/fib.png" alt="" /></p>
+
+<p>&hellip; and scrolling down &hellip;</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/fib_2.png" alt="" /></p>
+
+<p>Ok, let&rsquo;s run empty code - and go to submissions &hellip;</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/submissions.png" alt="" /></p>
+
+<p>&hellip; whoops! Something went wrong - let&rsquo;s check what &hellip;</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/compile_error.png" alt="" /></p>
+
+<p>Yep right 😊 Let&rsquo;s check again source code we have submitted &hellip;</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/source_code.png" alt="" /></p>
+
+<p>Seems obvious now 😊 As we run empty method which expected to return some value &hellip; you see now. Ok, let&rsquo;s check ranking!</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/ranking.png" alt="" /></p>
+
+<p>Seems Kraków is leading competition 😊</p>
+
+<p>Ok, after some effort and few days spent, let&rsquo;s check how my profile looks like!</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/profile_1.png" alt="" /></p>
+
+<p>&hellip; and how about my submissions &hellip;</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/profile_2.png" alt="" /></p>
+
+<p>That&rsquo;s it for now 🐣!</p>
+
+
+    
+    </div>
+    </div>
+</main>
+  <footer></footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

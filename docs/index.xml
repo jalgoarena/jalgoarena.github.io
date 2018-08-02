@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Quick Start</title>
-      <link>https://jalgoarena.github.io/docs/quick-start/</link>
+      <title>Getting Started</title>
+      <link>https://jalgoarena.github.io/docs/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jalgoarena.github.io/docs/quick-start/</guid>
+      <guid>https://jalgoarena.github.io/docs/getting-started/</guid>
       <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
  Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
     </item>
