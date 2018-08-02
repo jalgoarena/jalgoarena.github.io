@@ -61,7 +61,7 @@ In case anything important is missing in here, please create a [new issue](https
         <td>Points</td>
         <td>
             <p>Users gain points for solving <em>problems</em>.</p>
-            <p>To read more about how points are gained and how score is calculated, check <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">page/a>.</p>
+            <p>To read more about how points are gained and how score is calculated, check <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">page</a>.</p>
         </td>
     </tr>
     <tr>
@@ -76,7 +76,7 @@ In case anything important is missing in here, please create a [new issue](https
                 </ul>
             </p>
             <p>
-                Rankings are calculated on fly based on stored <em>submissions</em>, which are considered in <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">points calculation/a>.
+                Rankings are calculated on fly based on stored <em>submissions</em>, which are considered in <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">points calculation</a>.
             </p>
         </td>
     </tr>
