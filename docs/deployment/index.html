@@ -137,24 +137,26 @@ headingSelector: 'h3'
 
 
 
-    <h3 class="section-head" id="h-basic-template"><a href="#h-basic-template">Deploy with Docker & Nomad</a></h3>
+    <h3 class="section-head" id="h-consul-nomad"><a href="#h-consul-nomad">Consul & Nomad</a></h3>
 
-<p>To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.</p>
+<p>The basis of JAlgoArena infrastructure are <a href="https://www.nomadproject.io/">Nomad</a> and <a href="https://www.consul.io/">Consul</a>.</p>
 
-<ol>
-<li>Make sure Docker is available on your machines</li>
-<li>Install Consul and Nomad clusters
+<p>On all machines where you plan to deploy JAlgoArena you should setup cluster of <a href="https://www.nomadproject.io/">Nomad</a> and <a href="https://www.consul.io/">Consul</a></p>
 
 <ul>
-<li>use <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step0.sh">step0.sh</a> to run locally on your laptop - it&rsquo;s not recommended for production use case</li>
-<li><a href="https://www.consul.io/intro/getting-started/join.html">Install Consul Cluster</a></li>
+<li>use <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/nomad_consul/nomad_consul_server.sh">nomad_consul_server.sh</a> to run locally on your laptop - it&rsquo;s not recommended for production use case</li>
+<li><a href="https://www.consul.io/intro/getting-started/join.html">Install Consul Cluster</a> - check firstly above command to use KV insert of config which you can modify, and nomad-client.hcl in case of using <code>raw_exec</code> driver</li>
 <li><a href="https://www.nomadproject.io/intro/getting-started/cluster.html">Install Nomad Cluster</a></li>
-</ul></li>
+</ul>
+
+<h3 class="section-head" id="h-raw-exec"><a href="#h-raw-exec">Raw Exec (non-docker)</a></h3>
+
+<ol>
 <li>Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:
 
 <ul>
 <li>Clone JAlgoArena-Nomad locally <code>git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git</code></li>
-<li>go to cloned repo, and run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step1.sh">./step1.sh</a> - this will run all necessary tools
+<li>go to cloned repo into <code>raw_exec</code> dir, and run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/step1.sh">./step1.sh</a> - this will run all necessary tools
 
 <ul>
 <li>make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI</li>
@@ -163,7 +165,33 @@ headingSelector: 'h3'
 <li>Run JAlgoArena microservices:
 
 <ul>
-<li>go to cloned repo, and run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step2.sh">./step2.sh</a> - this will run all microservices</li>
+<li>run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/step2.sh">./step2.sh</a> - this will run all microservices</li>
+<li>after verifying all Nomad jobs are running and healthy within Consul - open JAlgoArena Web UI
+
+<ul>
+<li>if you are on machine where it&rsquo;s hosted - <a href="http://localhost:3000">http://localhost:3000</a></li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h3 class="section-head" id="h-docker"><a href="#h-docker">Docker</a></h3>
+
+<ol>
+<li>Make sure Docker is available on your machines</li>
+<li>Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:
+
+<ul>
+<li>Clone JAlgoArena-Nomad locally <code>git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git</code></li>
+<li>go to cloned repo into <code>docker</code> dir, and run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/docker/step1.sh">./step1.sh</a> - this will run all necessary tools
+
+<ul>
+<li>make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI</li>
+</ul></li>
+</ul></li>
+<li>Run JAlgoArena microservices:
+
+<ul>
+<li>run <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/docker/step2.sh">./step2.sh</a> - this will run all microservices</li>
 <li>after verifying all Nomad jobs are running and healthy within Consul - open JAlgoArena Web UI
 
 <ul>
