@@ -41,4 +41,12 @@ In case anything important is missing in here, please create a [new issue](https
         <td>User</td>
         <td>Entity representing JAlgoArena user. After creating new account, your date is represented and kept secure under <strong>User</strong> entity. It's important to note that passwords are kept encrypted.</td>
     </tr>
+    <tr>
+        <td>Problem</td>
+        <td>
+            <p>Entity representing problem definition which can be solved by <em>users</em> by passing new <em>submission</em>.</p>
+            <p>Every problem contains id, name, description, difficulty level and definition of skeleton code plus test cases to check against incoming <em>submissions</em></p>
+            <p>All problems are pre-defined by administrators</em>
+        </td>
+    </tr>
 </table>
