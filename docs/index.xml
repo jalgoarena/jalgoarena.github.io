@@ -51,7 +51,7 @@
       <description>Intro You will be able to see here all meaningful parts of JAlgoArena architecture which are not JAlgoArena microservices.
 In case anything important is missing in here, please create a new issue.
 Technology  Term Description   Traefik  API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing.
-See more details on Traefik home page
+See more details on Traefik
    Apache Kafka  Stream processing component which controls flow for serving submissions.</description>
     </item>
     
