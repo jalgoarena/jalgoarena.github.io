@@ -20,6 +20,7 @@ After you open JAlgoArena Web UI - you will see below page. You will have access
 
 Problems screen give you access to full list of problems. There is few things which are worth to know:
 
+* you can see number of problems available - after clicking on it you will see maximum amount of possible to gain based on all problems
 * all problems which you successfully solved will be marked green tick
 * all problems which you submitted but did not solve will be marked by red cross
 * you can filter problems which you did not solve yet
@@ -30,17 +31,27 @@ Problems screen give you access to full list of problems. There is few things wh
 
 <h3 class="section-head" id="h-problem"><a href="#h-problem">Problem</a></h3>
 
-Ok, let's click now on one of the problems, famous fibonacci problem (you have to create account and sign in before).
+Let's click now on one of the problems, famous fibonacci. Again, there is few things worth to know:
 
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/fib.png)
+* problem which you successfully solved will be marked green tick
+* problem which you submitted but did not solve will be marked by red cross
+* you can see max amount of points to gain based on problem difficulty - and after clicking how in general different difficulty levels are scored
+* at any point of time you may refresh this screen - you will lose your source code
+* code editor is highlighting `Java` source code
+* below source code editor you can see time and memory limits you cannot exceed
+* after running your submission together with source code is saved and you can check it on <em>submissions</em> page
 
-... and scrolling down ...
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/problem.png)
 
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/fib_2.png)
+Additionally you can open problem ranking, where all problem accepted solutions are ranked against each other:
 
-Ok, let's run empty code - and go to submissions ...
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/problem_ranking.png)
 
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/submissions.png)
+<h3 class="section-head" id="h-submissions"><a href="#h-submissions">Submissions</a></h3>
+
+TBC
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/submissions.png)
 
 ... whoops! Something went wrong - let's check what ...
 
