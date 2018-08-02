@@ -69,4 +69,11 @@ In case anything important is missing in here, please create a [new issue](https
             <p>See more details on <a href="https://www.cockroachlabs.com/" target="_blank">Cockroach Labs</a> page.</p>
         </td>
     </tr>
+    <tr>
+        <td>Elastic Stack</td>
+        <td>
+            <p>JAlgoArena is using Elastic Stack for tracing distributed logging. In particular, we use <em>Logstash</em>, <em>Elasticsearch</em> and <em>Kibana</em></p>
+            <p>See more details on <a href="https://www.elastic.co/" target="_blank">Elastic Stack</a> page.</p>
+        </td>
+    </tr>
 </table>
