@@ -1,52 +1,34 @@
 +++
 title = "Getting Started"
-description = "Up and running in 10 minutes"
+description = "Solve your first problem"
 weight = 10
 draft = false
 toc = true
-bref = "As a complete and highly performing algorithmic contest platform, JAlgoArena is here to help you get the most out of your own hosted contest. JAlgoArena comes with predefined problems (100+) to solve with different difficulty levels - software engineers with different skillset will be able to tackle problems meeting their skills. Starting up with JAlgoArena is fast and easy. Here's how to set up JAlgoArena, and what basic prerequisites are required."
+bref = "Guidance on JAlgoArena UI screens."
 +++
 
-<h3 class="section-head" id="h-basic-template"><a href="#h-basic-template">Deploy with Docker & Nomad</a></h3>
 
-To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
+<h3 class="section-head" id="h-welcome"><a href="#h-welcome">Welcome</a></h3>
 
-1. Make sure Docker is available on your machines
-1. Install Consul and Nomad clusters
-   * use [step0.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step0.sh) to run locally on your laptop - it's not recommended for production use case
-   * [Install Consul Cluster](https://www.consul.io/intro/getting-started/join.html)
-   * [Install Nomad Cluster](https://www.nomadproject.io/intro/getting-started/cluster.html)
-1. Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:
-   * Clone JAlgoArena-Nomad locally `git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git`
-   * go to cloned repo, and run [./step1.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step1.sh) - this will run all necessary tools
-     * make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI
-1. Run JAlgoArena microservices:
-   * go to cloned repo, and run [./step2.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/step2.sh) - this will run all microservices
-   * after verifying all Nomad jobs are running and healthy within Consul - open JAlgoArena Web UI
-     * if you are on machine where it's hosted - http://localhost:3000
+After you open JAlgoArena Web UI - you will see below page. You will have access to menu moving you to other screens.
 
-<h3 class="section-head" id="h-supported-browsers"><a href="#h-supported-browsers">Supported Browsers</a></h3>
+> Note: the right up corner green bulb indicates that you are connected with WebSocket service. This service will bring you live updates to rankings and submissions.
 
-<p>JAlgoArena supports the latest, stable releases of all major browsers:</p>
-<ul>
-    <li>Latest Chrome</li>
-    <li>Latest Firefox</li>
-    <li>Latest Safari</li>
-    <li>Latest Opera</li>
-    <li>Microsoft Edge</li>
-    <li>Internet Explorer 11</li>
-</ul>
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/welcome.png)
 
+<h3 class="section-head" id="h-problems"><a href="#h-problems">Problems</a></h3>
 
-<h3 class="section-head" id="h-development"><a href="#h-development">Solving a first problem</a></h3>
+Problems screen give you access to full list of problems. There is few things which are worth to know:
 
-After you open JAlgoArena Web UI - you will see below page.
+* all problems which you successfully solved will be marked green tick
+* all problems which you submitted but did not solve will be marked by red cross
+* you can filter problems which you did not solve yet
+* you can filter problems based on difficulty
+ 
 
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/home.png)
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/problems.png)
 
-Click on learn more, which will move you to problems page. In here you can see all available problems for solving, with difficulty level assigned.
-
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/problems.png)
+<h3 class="section-head" id="h-problem"><a href="#h-problem">Problem</a></h3>
 
 Ok, let's click now on one of the problems, famous fibonacci problem (you have to create account and sign in before).
 

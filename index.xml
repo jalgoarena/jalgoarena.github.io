@@ -17,8 +17,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jalgoarena.github.io/docs/getting-started/</guid>
-      <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
- Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
+      <description>Welcome After you open JAlgoArena Web UI - you will see below page. You will have access to menu moving you to other screens.
+ Note: the right up corner green bulb indicates that you are connected with WebSocket service. This service will bring you live updates to rankings and submissions.
+ Problems Problems screen give you access to full list of problems. There is few things which are worth to know:</description>
     </item>
     
     <item>
@@ -60,6 +61,16 @@ Deployment flow  Initially, developer push his changes to GitHub In next stage, 
       <guid>https://jalgoarena.github.io/blog/welcome/</guid>
       <description>Welcome to JAlgoArena – an open source algorithmic contest platform Hi there and welcome to JAlgoArena - this is first post just to mark the start point! There is lots of interesting technical considerations which are part of building such platform - especially if you have cloud native, high availability topics as the priorities for developing such platform!
 So far it was used successfully in few companies to run globally spread on-premises hosted company wide algorithmic contest - and you know what?</description>
+    </item>
+    
+    <item>
+      <title>Deployment</title>
+      <link>https://jalgoarena.github.io/docs/deployment/</link>
+      <pubDate>Thu, 02 Aug 2018 12:08:06 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/deployment/</guid>
+      <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
+ Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
     </item>
     
     <item>

@@ -17,8 +17,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jalgoarena.github.io/docs/getting-started/</guid>
-      <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
- Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
+      <description>Welcome After you open JAlgoArena Web UI - you will see below page. You will have access to menu moving you to other screens.
+ Note: the right up corner green bulb indicates that you are connected with WebSocket service. This service will bring you live updates to rankings and submissions.
+ Problems Problems screen give you access to full list of problems. There is few things which are worth to know:</description>
     </item>
     
     <item>
@@ -40,6 +41,16 @@
       <description>Problem Difficulty Firstly, base amount of points depends on problem difficulty:
  Difficulty Base Points   Easy 10 points   Medium 30 points   Hard 50 points   Time Penalty Secondly, amount of points which depends on time penalty:
  Elapsed Time / Time Limit Points Factor   &amp;gt;= 500 1.0   &amp;gt;= 100 3.0   &amp;gt;= 10 5.0   &amp;gt;= 1 8.</description>
+    </item>
+    
+    <item>
+      <title>Deployment</title>
+      <link>https://jalgoarena.github.io/docs/deployment/</link>
+      <pubDate>Thu, 02 Aug 2018 12:08:06 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/deployment/</guid>
+      <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
+ Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
     </item>
     
     <item>
