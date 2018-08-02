@@ -2,7 +2,7 @@
 title = "Domain"
 description = "JAlgoArena ubiquitous language"
 date = 2018-08-02T07:31:06+02:00
-weight = 10
+weight = 40
 draft = false
 bref = "This page aims to make clear the vocabulary used across implementation and documentation within JAlgoArena domain"
 toc = true

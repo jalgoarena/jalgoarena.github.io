@@ -6,21 +6,10 @@
     <description>Recent content in JAlgoArena on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Aug 2018 07:31:06 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jul 2018 07:42:36 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Domain</title>
-      <link>https://jalgoarena.github.io/docs/domain/</link>
-      <pubDate>Thu, 02 Aug 2018 07:31:06 +0200</pubDate>
-      
-      <guid>https://jalgoarena.github.io/docs/domain/</guid>
-      <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. By domain we understand vocabulary used to describe business logic.
-In case anything important is missing in here, please create a new issue.
-Domain  Term Description   Submission The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement. The possible states of your submission are:  WAITING - just after submitting but before judgement ACCEPTED - once your submission is accepted COMPILE_ERROR - your submission source code is not compiling RUNTIME_ERROR - there was runtime exception during tests of your submission TIME_LIMIT_EXCEEDED - time limit was exceeded during tests of your submission MEMORY_LIMIT_EXCEEDED - time memory was exceeded during tests of your submission  You can check all your submissions from main screen, clicking on Submissions menu item.</description>
-    </item>
     
     <item>
       <title>Quick Start</title>
@@ -84,6 +73,17 @@ In case anything important is missing in here, please create a new issue.
 Technology  Term Description   Traefik  API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing.
 See more details on Traefik home page
    Apache Kafka  Stream processing component which controls flow for serving submissions.</description>
+    </item>
+    
+    <item>
+      <title>Domain</title>
+      <link>https://jalgoarena.github.io/docs/domain/</link>
+      <pubDate>Thu, 02 Aug 2018 07:31:06 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/domain/</guid>
+      <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. By domain we understand vocabulary used to describe business logic.
+In case anything important is missing in here, please create a new issue.
+Domain  Term Description   Submission The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement. The possible states of your submission are:  WAITING - just after submitting but before judgement ACCEPTED - once your submission is accepted COMPILE_ERROR - your submission source code is not compiling RUNTIME_ERROR - there was runtime exception during tests of your submission TIME_LIMIT_EXCEEDED - time limit was exceeded during tests of your submission MEMORY_LIMIT_EXCEEDED - time memory was exceeded during tests of your submission  You can check all your submissions from main screen, clicking on Submissions menu item.</description>
     </item>
     
     <item>
