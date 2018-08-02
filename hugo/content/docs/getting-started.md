@@ -47,6 +47,38 @@ Additionally you can open problem ranking, where all problem accepted solutions 
 
 ![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/problem_ranking.png)
 
+<h3 class="section-head" id="h-ranking"><a href="#h-ranking">Ranking</a></h3>
+
+There are three different types of rankings which you can read about on [domain page](https://jalgoarena.github.io/docs/domain/#h-domain), let's see below examples.
+
+Additionally, it's worth to know:
+
+* from user ranking you can click on user names which will open user profile page (more info on profiles below)
+* all rankings are searchable and sortable
+* all rankings use pagination to make it easier to navigate through rankings
+
+<h5>User Ranking</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/user_ranking.png)
+
+<h5>Team Ranking</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/team_ranking.png)
+
+<h5>Region Ranking</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/region_ranking.png)
+
+<h3 class="section-head" id="h-login-signup"><a href="#h-login-signup">Login & Signup</a></h3>
+
+To see user specific screens you have to firstly create account:
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/signup.png)
+
+Later you can use given username and password to log in:
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/login.png)
+
 <h3 class="section-head" id="h-submissions"><a href="#h-submissions">Submissions</a></h3>
 
 Once you open your submissions, if you scroll down you will be able to see all your submissions. There are few columns, which we describe below:
@@ -61,7 +93,7 @@ Once you open your submissions, if you scroll down you will be able to see all y
 
 Of course that's good to have, but more interesting would be to see submission results!
 
-In hre again there are few columns, let's explain them:
+In here again there are few columns, let's explain them:
 
 * `ID` - indicating persisted entity id of your submission
 * `Elapsed Time (ms)` - time your submission took to solve all given test cases in milliseconds
@@ -83,20 +115,8 @@ And error message:
 
 Additionally it's worth to remember this page is using pagination as well as search box you can easily use navigate or search for submissions.
 
-<h3 class="section-head" id="h-ranking"><a href="#h-ranking">Ranking</a></h3>
+<h3 class="section-head" id="h-profile"><a href="#h-profile">Profile</a></h3>
 
-TBC
+Finally, every user has own profile page which bunch of details about them and their submissions:
 
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/ranking.png)
-
-Seems Kraków is leading competition 😊
-
-Ok, after some effort and few days spent, let's check how my profile looks like!
-
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/profile_1.png)
-
-... and how about my submissions ...
-
-![](https://raw.githubusercontent.com/jalgoarena/JAlgoArena/master/design/ui/profile_2.png)
-
-That's it for now 🐣!
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/profile.png)
