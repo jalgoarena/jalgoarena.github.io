@@ -49,4 +49,11 @@ In case anything important is missing in here, please create a [new issue](https
             <p>All problems are pre-defined by administrators</em>
         </td>
     </tr>
+    <tr>
+        <td>Points</td>
+        <td>
+            <p>Users gain points for solving <em>problems</em>.</p>
+            <p>To read more about how points are gained and how score is calculated, check <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">page/a>.</p>
+        </td>
+    </tr>
 </table>
