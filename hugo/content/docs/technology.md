@@ -25,7 +25,7 @@ In case anything important is missing in here, please create a [new issue](https
         <td>Traefik</td>
         <td>
             <p>API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing.</p>
-            <p>See more details on <a href="https://traefik.io/" target="_blank">Traefik</a></p>
+            <p>See more details on <a href="https://traefik.io/" target="_blank">Traefik</a> page.</p>
         </td>
     </tr>
     <tr>
@@ -36,7 +36,7 @@ In case anything important is missing in here, please create a [new issue](https
                 Initially when users submits new solution, it goes to <em>Apache Kafka</em> from where it's consumed by <em>Submissions microservice</em> for futher processing. 
                 All microservices which takes part in submission process communicate through <em>Apache Kafka</em> topics in asynchronous way.
             </p> 
-            <p>See more details on <a href="https://kafka.apache.org/" target="_blank">Apache Kafka/a></p>
+            <p>See more details on <a href="https://kafka.apache.org/" target="_blank">Apache Kafka</a> page.</p>
         </td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@ In case anything important is missing in here, please create a [new issue](https
         <td>
             <p>Consul cluster provides capability of service discovery and distributed configuration. <em>Traefik</em> is using consul to build all API rules based on which destination microservices can be reached.</p>
             <p>In production JAlgoArena should be using cluster build from 3 server agents for high availability</p>
-            <p>See more details on <a href="https://consul.io/" target="_blank">Consul</a></p>
+            <p>See more details on <a href="https://consul.io/" target="_blank">Consul</a> page.</p>
         </td>
     </tr>
     <tr>
@@ -54,12 +54,11 @@ In case anything important is missing in here, please create a [new issue](https
             <p>
                 Actual nomad jobs allows to use two drivers: 
                 <ul>
-                    <strong>docker</strong> - for which you have to have docker up and running on your machines, see <a href="https://www.nomadproject.io/docs/drivers/docker.html" target="_blank">official docs</a>
-                    <strong>raw_docker</strong> - which requires to have Java 8 and Node.JS >= 6 available on your machines, see <a href="https://www.nomadproject.io/docs/drivers/raw_exec.html" target="_blank">official docs</a>
+                    <li><strong>docker</strong> - for which you have to have docker up and running on your machines, see <a href="https://www.nomadproject.io/docs/drivers/docker.html" target="_blank">official docs</a></li>
+                    <li><strong>raw_docker</strong> - which requires to have Java 8 and Node.JS >= 6 available on your machines, see <a href="https://www.nomadproject.io/docs/drivers/raw_exec.html" target="_blank">official docs</a></li>
                 </ul>
-                All nomad job specs can be found in <a href="https://github.com/jalgoarena/JAlgoArena-Nomad" target="_blank">here</a>.
             </p>
-            <p>See more details on <a href="https://nomadproject.io/" target="_blank">Traefik home page</a></p>
+            <p>All nomad job specs can be found in <a href="https://github.com/jalgoarena/JAlgoArena-Nomad" target="_blank">here</a>. See more details on <a href="https://nomadproject.io/" target="_blank">Nomad</a> page.</p>
         </td>
     </tr>
 </table>
