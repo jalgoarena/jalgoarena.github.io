@@ -139,8 +139,9 @@ headingSelector: 'h3'
 
     <h3 class="section-head" id="h-intro"><a href="#h-intro">Intro</a></h3>
 
-<p>You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. This is divided to two parts,
-domain which is more about business logic, and technology which is more about tools and infrastructure common to JAlgoArena
+<p>You will be able to see here all meaningful words appearing commonly in JAlgoArena domain.</p>
+
+<p>This is divided to two parts, domain which is more about business logic, and technology which is more about tools and infrastructure common to JAlgoArena
 architecture. In case anything important is missing in here, please create a <a href="https://github.com/jalgoarena/JAlgoArena/issues/new">new issue</a>.</p>
 
 <h3 class="section-head" id="h-domain"><a href="#h-domain">Domain</a></h3>
@@ -165,6 +166,10 @@ architecture. In case anything important is missing in here, please create a <a 
             You can check all your submissions from main screen, clicking on <strong><em>Submissions</em></strong> menu item. 
         </td>
     </tr>
+    <tr>
+        <td>User</td>
+        <td>Entity representing JAlgoArena user. After creating new account, your date is represented and kept secure under <strong>User</strong> entity. It's important to note that passwords are kept encrypted.</td>
+    </tr>
 </table>
 
 <h3 class="section-head" id="h-technology"><a href="#h-technology">Technology</a></h3>
@@ -177,6 +182,15 @@ architecture. In case anything important is missing in here, please create a <a 
     <tr>
         <td>Traefik</td>
         <td>API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing. See more details on <a href="https://traefik.io/" target="_blank">Traefik home page</a></td>
+    </tr>
+    <tr>
+        <td>Apache Kafka</td>
+        <td>
+            <p>Stream processing component which controls flow for serving submissions.</p> 
+            <p>Initially when users submits new solution, it goes to <em>Apache Kafka</em> from where it's consumed by <em>Submissions microservice</em> for futher processing. 
+            All microservices which takes part in submission process communicate through <em>Apache Kafka</em> topics in asynchronous way.</p> 
+            <p>See more details on <a href="https://kafka.apache.org/" target="_blank">Apache Kafka home page</a></p>
+        </td>
     </tr>
 </table>
 

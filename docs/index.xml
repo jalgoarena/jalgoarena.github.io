@@ -48,7 +48,8 @@
       <pubDate>Thu, 02 Aug 2018 07:31:06 +0200</pubDate>
       
       <guid>https://jalgoarena.github.io/docs/terminology/</guid>
-      <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. This is divided to two parts, domain which is more about business logic, and technology which is more about tools and infrastructure common to JAlgoArena architecture. In case anything important is missing in here, please create a new issue.
+      <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain.
+This is divided to two parts, domain which is more about business logic, and technology which is more about tools and infrastructure common to JAlgoArena architecture. In case anything important is missing in here, please create a new issue.
 Domain  Term Description   Submission The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement.</description>
     </item>
     
