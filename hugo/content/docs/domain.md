@@ -42,6 +42,14 @@ In case anything important is missing in here, please create a [new issue](https
         <td>Entity representing JAlgoArena user. After creating new account, your date is represented and kept secure under <strong>User</strong> entity. It's important to note that passwords are kept encrypted.</td>
     </tr>
     <tr>
+        <td>Region</td>
+        <td>Geographical region tha user belongs to. Regions are defined by administrators - to add new one please contact them.</td>
+    </tr>
+    <tr>
+        <td>Team</td>
+        <td>Team tha user belongs to. The teams definition is fairly flexible and depends from your choice. Teams are defined by administrators - to add new one please contact them.</td>
+    </tr>
+    <tr>
         <td>Problem</td>
         <td>
             <p>Entity representing problem definition which can be solved by <em>users</em> by passing new <em>submission</em>.</p>
@@ -54,6 +62,22 @@ In case anything important is missing in here, please create a [new issue](https
         <td>
             <p>Users gain points for solving <em>problems</em>.</p>
             <p>To read more about how points are gained and how score is calculated, check <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">page/a>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Ranking</td>
+        <td>
+            <p>Ranking are the main output of JAlgoArena - this is the place where competition happens. Based on gained <em>points</em> - the different type of rankigns are build.</p>
+            <p>There is three type of rankings:
+                <ul>
+                    <li><strong>User Ranking</strong> - based on individual user points</li>
+                    <li><strong>Region Ranking</strong> - based on user points belonging to particular regions</li>
+                    <li><strong>User Ranking</strong> - based on user points belonging to particular teams</li>
+                </ul>
+            </p>
+            <p>
+                Rankings are calculated on fly based on stored <em>submissions</em>, which are considered in <a href="https://jalgoarena.github.io/docs/calculating-points/" target="_blank">points calculation/a>.
+            </p>
         </td>
     </tr>
 </table>
