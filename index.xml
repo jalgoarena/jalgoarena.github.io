@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Quick Start</title>
-      <link>https://jalgoarena.github.io/docs/quick-start/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jalgoarena.github.io/docs/quick-start/</guid>
-      <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
- Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
-    </item>
-    
-    <item>
       <title>Domain</title>
       <link>https://jalgoarena.github.io/docs/domain/</link>
       <pubDate>Thu, 02 Aug 2018 07:31:06 +0200</pubDate>
@@ -30,6 +20,16 @@
       <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. By domain we understand vocabulary used to describe business logic.
 In case anything important is missing in here, please create a new issue.
 Domain  Term Description   Submission The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement. The possible states of your submission are:  WAITING - just after submitting but before judgement ACCEPTED - once your submission is accepted COMPILE_ERROR - your submission source code is not compiling RUNTIME_ERROR - there was runtime exception during tests of your submission TIME_LIMIT_EXCEEDED - time limit was exceeded during tests of your submission MEMORY_LIMIT_EXCEEDED - time memory was exceeded during tests of your submission  You can check all your submissions from main screen, clicking on Submissions menu item.</description>
+    </item>
+    
+    <item>
+      <title>Quick Start</title>
+      <link>https://jalgoarena.github.io/docs/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/quick-start/</guid>
+      <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
+ Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
     </item>
     
     <item>
