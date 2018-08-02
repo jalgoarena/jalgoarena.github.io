@@ -33,7 +33,7 @@ architecture. In case anything important is missing in here, please create a [ne
                 <li><strong>TIME_LIMIT_EXCEEDED</strong> - time limit was exceeded during tests of your submission</li>
                 <li><strong>MEMORY_LIMIT_EXCEEDED</strong> - time memory was exceeded during tests of your submission</li>
             </ul>
-            You can check all your submissions from main screen, clicking on `Submissions` menu item. 
+            You can check all your submissions from main screen, clicking on <strong><em>Submissions</em></strong> menu item. 
         </td>
     </tr>
 </table>
@@ -47,6 +47,6 @@ architecture. In case anything important is missing in here, please create a [ne
     </tr>
     <tr>
         <td>Traefik</td>
-        <td>API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing. See more details on [Traefik home page](https://traefik.io/)</td>
+        <td>API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing. See more details on <a href="https://traefik.io/" target="_blank">Traefik home page</a></td>
     </tr>
 </table>
