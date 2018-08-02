@@ -14,7 +14,11 @@ The basis of JAlgoArena infrastructure are [Nomad](https://www.nomadproject.io/)
 
 On all machines where you plan to deploy JAlgoArena you should setup cluster of [Nomad](https://www.nomadproject.io/) and [Consul](https://www.consul.io/)
 
-* use [nomad_consul_server.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/nomad_consul/nomad_consul_server.sh) to run locally on your laptop - it's not recommended for production use case
+Local run:
+* Clone JAlgoArena-Nomad locally `git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git`
+* install Consul and Nomad, put them on path, then use [nomad_consul_server.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/nomad_consul/nomad_consul_server.sh) to run locally on your laptop - it's not recommended for production use case
+
+Production run:
 * [Install Consul Cluster](https://www.consul.io/intro/getting-started/join.html) - check firstly above command to use KV insert of config which you can modify, and nomad-client.hcl in case of using `raw_exec` driver
 * [Install Nomad Cluster](https://www.nomadproject.io/intro/getting-started/cluster.html)
 
@@ -24,6 +28,7 @@ On all machines where you plan to deploy JAlgoArena you should setup cluster of 
    * Clone JAlgoArena-Nomad locally `git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git`
    * go to cloned repo into `raw_exec` dir, and run [./step1.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/step1.sh) - this will run all necessary tools
      * make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI
+   * once done, go to `db` dir, and run `./create_db.sh` script (modify IP and port, depending on where cockroach db is hosted)
 1. Run JAlgoArena microservices:
    * run [./step2.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/step2.sh) - this will run all microservices
    * after verifying all Nomad jobs are running and healthy within Consul - open JAlgoArena Web UI
@@ -36,6 +41,7 @@ On all machines where you plan to deploy JAlgoArena you should setup cluster of 
    * Clone JAlgoArena-Nomad locally `git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git`
    * go to cloned repo into `docker` dir, and run [./step1.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/docker/step1.sh) - this will run all necessary tools
      * make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI
+   * once done, go to `db` dir, and run `./create_db.sh` script (modify IP and port, depending on where cockroach db is hosted)
 1. Run JAlgoArena microservices:
    * run [./step2.sh](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/docker/step2.sh) - this will run all microservices
    * after verifying all Nomad jobs are running and healthy within Consul - open JAlgoArena Web UI

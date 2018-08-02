@@ -143,11 +143,13 @@ headingSelector: 'h3'
 
 <p>On all machines where you plan to deploy JAlgoArena you should setup cluster of <a href="https://www.nomadproject.io/">Nomad</a> and <a href="https://www.consul.io/">Consul</a></p>
 
-<ul>
-<li>use <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/nomad_consul/nomad_consul_server.sh">nomad_consul_server.sh</a> to run locally on your laptop - it&rsquo;s not recommended for production use case</li>
-<li><a href="https://www.consul.io/intro/getting-started/join.html">Install Consul Cluster</a> - check firstly above command to use KV insert of config which you can modify, and nomad-client.hcl in case of using <code>raw_exec</code> driver</li>
-<li><a href="https://www.nomadproject.io/intro/getting-started/cluster.html">Install Nomad Cluster</a></li>
-</ul>
+<p>Local run:
+* Clone JAlgoArena-Nomad locally <code>git clone https://github.com/jalgoarena/JAlgoArena-Nomad.git</code>
+* install Consul and Nomad, put them on path, then use <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/nomad_consul/nomad_consul_server.sh">nomad_consul_server.sh</a> to run locally on your laptop - it&rsquo;s not recommended for production use case</p>
+
+<p>Production run:
+* <a href="https://www.consul.io/intro/getting-started/join.html">Install Consul Cluster</a> - check firstly above command to use KV insert of config which you can modify, and nomad-client.hcl in case of using <code>raw_exec</code> driver
+* <a href="https://www.nomadproject.io/intro/getting-started/cluster.html">Install Nomad Cluster</a></p>
 
 <h3 class="section-head" id="h-raw-exec"><a href="#h-raw-exec">Raw Exec (non-docker)</a></h3>
 
@@ -161,6 +163,7 @@ headingSelector: 'h3'
 <ul>
 <li>make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI</li>
 </ul></li>
+<li>once done, go to <code>db</code> dir, and run <code>./create_db.sh</code> script (modify IP and port, depending on where cockroach db is hosted)</li>
 </ul></li>
 <li>Run JAlgoArena microservices:
 
@@ -187,6 +190,7 @@ headingSelector: 'h3'
 <ul>
 <li>make sure that traefik, kafka, zookeeper, cockrouch are seen healthy in your Consul Web UI</li>
 </ul></li>
+<li>once done, go to <code>db</code> dir, and run <code>./create_db.sh</code> script (modify IP and port, depending on where cockroach db is hosted)</li>
 </ul></li>
 <li>Run JAlgoArena microservices:
 
