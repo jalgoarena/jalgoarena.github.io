@@ -6,7 +6,7 @@
     <description>Recent content in Docs on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jul 2018 07:31:44 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 02 Aug 2018 07:31:06 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,17 @@
       <guid>https://jalgoarena.github.io/docs/quick-start/</guid>
       <description>Deploy with Docker &amp; Nomad To deploy JAlgoArena - you will need to spin up Nomad and Consul clusters plus install Docker Engine.
  Make sure Docker is available on your machines Install Consul and Nomad clusters  use step0.sh to run locally on your laptop - it&amp;rsquo;s not recommended for production use case Install Consul Cluster Install Nomad Cluster  Once you have Nomad and Consul up and running, you may start running JAlgoArena external services:  Clone JAlgoArena-Nomad locally git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>Domain</title>
+      <link>https://jalgoarena.github.io/docs/domain/</link>
+      <pubDate>Thu, 02 Aug 2018 07:31:06 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/domain/</guid>
+      <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. By domain we understand vocabulary used to describe business logic.
+In case anything important is missing in here, please create a new issue.
+Domain  Term Description   Submission The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement. The possible states of your submission are:  WAITING - just after submitting but before judgement ACCEPTED - once your submission is accepted COMPILE_ERROR - your submission source code is not compiling RUNTIME_ERROR - there was runtime exception during tests of your submission TIME_LIMIT_EXCEEDED - time limit was exceeded during tests of your submission MEMORY_LIMIT_EXCEEDED - time memory was exceeded during tests of your submission  You can check all your submissions from main screen, clicking on Submissions menu item.</description>
     </item>
     
     <item>
@@ -43,14 +54,14 @@
     </item>
     
     <item>
-      <title>Terminology</title>
-      <link>https://jalgoarena.github.io/docs/terminology/</link>
-      <pubDate>Thu, 02 Aug 2018 07:31:06 +0200</pubDate>
+      <title>Technology</title>
+      <link>https://jalgoarena.github.io/docs/technology/</link>
+      <pubDate>Thu, 02 Aug 2018 07:35:06 +0200</pubDate>
       
-      <guid>https://jalgoarena.github.io/docs/terminology/</guid>
-      <description>Intro You will be able to see here all meaningful words appearing commonly in JAlgoArena domain.
-This is divided to two parts, domain which is more about business logic, and technology which is more about tools and infrastructure common to JAlgoArena architecture. In case anything important is missing in here, please create a new issue.
-Domain  Term Description   Submission The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement.</description>
+      <guid>https://jalgoarena.github.io/docs/technology/</guid>
+      <description>Intro You will be able to see here all meaningful parts of JAlgoArena architecture which are not JAlgoArena microservices.
+In case anything important is missing in here, please create a new issue.
+Technology  Term Description   Traefik API Edge service which exposes REST and WebSocket API doing necessary path rewrites and load balancing. See more details on Traefik home page   Apache Kafka  Stream processing component which controls flow for serving submissions.</description>
     </item>
     
   </channel>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.44" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Domain </title>
+
+  
+  <meta name="description" content="JAlgoArena ubiquitous language"> 
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="JAlgoArena">
+
+
+  <meta property="og:title" content="Domain" />
+<meta property="og:description" content="JAlgoArena ubiquitous language" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jalgoarena.github.io/docs/domain/" />
+
+
+
+<meta property="article:published_time" content="2018-08-02T07:31:06&#43;02:00"/>
+
+<meta property="article:modified_time" content="2018-08-02T07:31:06&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="https://jalgoarena.github.io/docs/domain/">  
+
+  <link rel="shortcut icon" type="image/png" href="/img/favicons/favicon.ico">
+
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.demo.css" rel="stylesheet" type="text/css">
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">JAlgoArena Home</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home"><img alt="Baseline" src="/img/common/logx2.png" width="120"></a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog/" >Blog</a></li>
+    
+    <li><a href="/docs/" >Docs</a></li>
+    
+    <li><a href="/faq/" >Faq</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h2> Domain </h2>
+      <p class="hero-lead">
+           This page aims to make clear the vocabulary used across implementation and documentation within JAlgoArena domain.
+      </p>
+
+    </div> 
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h3'
+})
+}
+);
+</script>
+
+
+
+    <h3 class="section-head" id="h-intro"><a href="#h-intro">Intro</a></h3>
+
+<p>You will be able to see here all meaningful words appearing commonly in JAlgoArena domain. By domain we understand vocabulary
+used to describe business logic.</p>
+
+<p>In case anything important is missing in here, please create a <a href="https://github.com/jalgoarena/JAlgoArena/issues/new">new issue</a>.</p>
+
+<h3 class="section-head" id="h-domain"><a href="#h-domain">Domain</a></h3>
+
+<table class="bordered striped">
+    <tr>
+        <th>Term</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Submission</td>
+        <td>The basic domain entity within JAlgoArena. It holds all necessery information for every user problem solution together with results after judgement. 
+            The possible states of your submission are: 
+            <ul>
+                <li><strong>WAITING</strong> - just after submitting but before judgement</li>
+                <li><strong>ACCEPTED</strong> - once your submission is accepted</li>
+                <li><strong>COMPILE_ERROR</strong> - your submission source code is not compiling</li>
+                <li><strong>RUNTIME_ERROR</strong> - there was runtime exception during tests of your submission</li>
+                <li><strong>TIME_LIMIT_EXCEEDED</strong> - time limit was exceeded during tests of your submission</li>
+                <li><strong>MEMORY_LIMIT_EXCEEDED</strong> - time memory was exceeded during tests of your submission</li>
+            </ul>
+            You can check all your submissions from main screen, clicking on <strong><em>Submissions</em></strong> menu item. 
+        </td>
+    </tr>
+    <tr>
+        <td>User</td>
+        <td>Entity representing JAlgoArena user. After creating new account, your date is represented and kept secure under <strong>User</strong> entity. It's important to note that passwords are kept encrypted.</td>
+    </tr>
+</table>
+
+
+    
+    </div>
+    </div>
+</main>
+  <footer></footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
