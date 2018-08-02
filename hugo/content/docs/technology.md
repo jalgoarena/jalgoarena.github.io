@@ -61,4 +61,12 @@ In case anything important is missing in here, please create a [new issue](https
             <p>All nomad job specs can be found in <a href="https://github.com/jalgoarena/JAlgoArena-Nomad" target="_blank">here</a>. See more details on <a href="https://nomadproject.io/" target="_blank">Nomad</a> page.</p>
         </td>
     </tr>
+    <tr>
+        <td>Cockroach DB</td>
+        <td>
+            <p>Persistante highly available storage that JAlgoArena is using. <em>Cockroach DB</em> is exposing SQL interface in similar way as Postgres SQL, which makes it very easy to use and operate with.</p>
+            <p>In production JAlgoArena should be using cluster build from 3 server nodes for high availability</p>
+            <p>See more details on <a href="https://www.cockroachlabs.com/" target="_blank">Cockroach Labs</a> page.</p>
+        </td>
+    </tr>
 </table>
