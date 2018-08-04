@@ -47,6 +47,27 @@ Additionally you can open problem ranking, where all problem accepted solutions 
 
 ![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/problem_ranking.png)
 
+<h3 class="section-head" id="h-ranking"><a href="#h-ranking">Ranking</a></h3>
+
+There are three different types of rankings which you can read about on [domain page](https://jalgoarena.github.io/docs/domain/#h-domain), let's see below examples.
+
+Additionally, it's worth to know:
+
+* from user ranking you can click on user names which will open user profile page (more info on profiles below)
+* all rankings are searchable and sortable
+* all rankings use pagination to make it easier to navigate through rankings
+
+<h5>User Ranking</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/user_ranking.png)
+
+<h5>Team Ranking</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/team_ranking.png)
+
+<h5>Region Ranking</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/region_ranking.png)
 
 
 <h3 class="section-head" id="h-login-signup"><a href="#h-login-signup">Login & Signup</a></h3>
