@@ -194,7 +194,7 @@ with embedded storage.
 <h3 class="section-head" id="h-cockroach"><a href="#h-cockroach">Scalability matters - Cockroach DB coming</a></h3>
 
 Initially there was a plan to use [Cassandra](http://cassandra.apache.org/) - I knew it, I used it, it was scalable and well
-know database. Although there were few buts:
+known database. Although there were few buts:
 
 - it's complex to operate
 - it's written in java, far from memory consumptions we have with C++ implementations
