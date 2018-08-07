@@ -5,6 +5,7 @@ categories = ["general"]
 date = 2018-07-25T07:42:36+02:00
 weight = 20
 draft = false
+toc = true
 +++
 
 ### Key factor to JAlgoArena development – ubiquitous automation
