@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-07T06:26:36&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-07T06:26:36&#43;02:00" />
-<meta itemprop="wordCount" content="693">
+<meta itemprop="wordCount" content="1275">
 
 
 
@@ -128,7 +128,7 @@
 <time class="post-time"><span class="icon">
   <i class="fa fa-clock-o" aria-hidden="true"></i>
 </span>
-<span>4 minute read</span>
+<span>6 minute read</span>
 <span class="icon">
  <i class="fa fa-pencil" aria-hidden="true"></i>
 </span>
@@ -228,6 +228,93 @@ about microservices. Keeping them small and decoupled allows on quick and easy c
 
 <h3 id="database-per-microservice">Database per microservice</h3>
 
+<p>Ok, my whole soul, mind and body was fulfilled with the idea - keep database specific to microservice. And again, I wanted to use something which can sit together
+with microservice - use some kind of embedded database and make usage of it as simple as possible. Oh - and I wanted to switch to <a href="https://spring.io/projects/spring-boot">Spring Boot</a>
+which is de facto widely standard within Java ecosystem for creating microservices.</p>
+
+<p>I looked for quite a while, compared different approaches and finally found - [Xodus](). However badly the name sounds, it&rsquo;s pretty decent database created by <strong>JetBrains</strong>.
+<strong>JetBrains Xodus</strong> is a Java transactional schema-less embedded database - and they use it for own products e.g. <strong>JetBrains YouTrack</strong>.
+You may read more about it in <a href="https://github.com/JetBrains/xodus/wiki">here</a>. Just to be clear, it&rsquo;s not a kindergarten tool,
+it is serious database capable to handle terabytes of data having transactions on board.</p>
+
+<p>Let&rsquo;s see how it impacted the architecture:</p>
+
+<p><img src="https://github.com/jalgoarena/JAlgoArena/raw/e9cc7ec915018ff154cb01f0246d5154ee77e89b/design/component_diagram.png" alt="Xodus based solution" /></p>
+
+<p>Besides of the fact that whole architecture grew to use <strong>Service Discovery</strong> approach, now you can see every microservice own
+separate database. Let&rsquo;s see how some of the repository methods are implemented within <strong>Kotlin</strong> using Xodus:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">findAll</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Problem</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">readonly</span> <span class="p">{</span>
+        <span class="n">it</span><span class="p">.</span><span class="n">getAll</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">ENTITY_TYPE</span><span class="p">).</span><span class="n">map</span> <span class="p">{</span> <span class="n">Problem</span><span class="p">.</span><span class="n">from</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>There is bit of <strong>Kotlin</strong> know how to decrypt it - but it&rsquo;s enough to understand that <strong>it</strong> is a thing passed from readonly
+method, which looks like:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">private</span> <span class="k">fun</span> &lt;T&gt; <span class="nf">readonly</span><span class="p">(</span><span class="n">call</span><span class="p">:</span> <span class="p">(</span><span class="n">PersistentStoreTransaction</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">T</span><span class="p">):</span> <span class="n">T</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">store</span><span class="p">.</span><span class="n">computeInReadonlyTransaction</span> <span class="p">{</span> <span class="n">call</span><span class="p">(</span><span class="n">it</span> <span class="k">as</span> <span class="n">PersistentStoreTransaction</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>As you see, it&rsquo;s just wrapping the code into readonly transaction (btw, such structures is why I love <strong>Kotlin</strong>) and passing store
+down to method, where we invoke getAll describing our entity name, and finally using <strong>Kotlin</strong> streams to map outgoing problems.</p>
+
+<p>To make a full picture, let&rsquo;s see how write transaction looks like:
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">private</span> <span class="k">fun</span> &lt;T&gt; <span class="nf">transactional</span><span class="p">(</span><span class="n">call</span><span class="p">:</span> <span class="p">(</span><span class="n">PersistentStoreTransaction</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">T</span><span class="p">):</span> <span class="n">T</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">store</span><span class="p">.</span><span class="n">computeInTransaction</span> <span class="p">{</span> <span class="n">call</span><span class="p">(</span><span class="n">it</span> <span class="k">as</span> <span class="n">PersistentStoreTransaction</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div></p>
+
+<p>And then how it is used to update existing items:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">override</span> <span class="k">fun</span> <span class="nf">addOrUpdate</span><span class="p">(</span><span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">):</span> <span class="n">Problem</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">transactional</span> <span class="p">{</span>
+        <span class="k">val</span> <span class="py">existingEntity</span> <span class="p">=</span> <span class="n">it</span><span class="p">.</span><span class="n">find</span><span class="p">(</span>
+                <span class="n">Constants</span><span class="p">.</span><span class="n">ENTITY_TYPE</span><span class="p">,</span> <span class="n">Constants</span><span class="p">.</span><span class="n">problemId</span><span class="p">,</span> <span class="n">problem</span><span class="p">.</span><span class="n">id</span>
+        <span class="p">).</span><span class="n">firstOrNull</span><span class="p">()</span>
+        <span class="k">val</span> <span class="py">entity</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">existingEntity</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">null</span> <span class="p">-&gt;</span> <span class="n">it</span><span class="p">.</span><span class="n">newEntity</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">ENTITY_TYPE</span><span class="p">)</span>
+            <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">existingEntity</span>
+        <span class="p">}</span>
+        <span class="n">updateEntity</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">problem</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">fun</span> <span class="nf">updateEntity</span><span class="p">(</span><span class="n">entity</span><span class="p">:</span> <span class="n">Entity</span><span class="p">,</span> <span class="n">problem</span><span class="p">:</span> <span class="n">Problem</span><span class="p">):</span> <span class="n">Problem</span> <span class="p">{</span>
+    <span class="n">entity</span><span class="p">.</span><span class="n">apply</span> <span class="p">{</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemId</span><span class="p">,</span> <span class="n">problem</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemTitle</span><span class="p">,</span> <span class="n">problem</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemDescription</span><span class="p">,</span> <span class="n">problem</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemLevel</span><span class="p">,</span> <span class="n">problem</span><span class="p">.</span><span class="n">level</span><span class="p">)</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemTimeLimit</span><span class="p">,</span> <span class="n">problem</span><span class="p">.</span><span class="n">timeLimit</span><span class="p">)</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemFunction</span><span class="p">,</span> <span class="n">toJson</span><span class="p">(</span><span class="n">problem</span><span class="p">.</span><span class="n">func</span><span class="o">!!</span><span class="p">))</span>
+        <span class="n">setProperty</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="n">problemTestCases</span><span class="p">,</span> <span class="n">toJson</span><span class="p">(</span><span class="n">problem</span><span class="p">.</span><span class="n">testCases</span><span class="o">!!</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Problem</span><span class="p">.</span><span class="n">from</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Full source code is available in here - <a href="https://github.com/spolnik/JAlgoArena-Problems/blob/master/src/main/kotlin/com/jalgoarena/data/XodusProblemsRepository.kt">XodusProblemRepository.kt</a>.</p>
+
+<p>This approach worked for quite a while - and I run few AlgoCup contest using it in production environment without any issues, or closely without any issues ;)</p>
+
+<p>The biggest challenge was, that any single component which was using it was hard to scale horizontally. If I start replicating services,
+how do I synchronize those file based storages?</p>
+
+<p>And there was actually partial rescue:</p>
+
+<p><img src="https://github.com/jalgoarena/JAlgoArena/raw/900a3cb2df2eadfac11133a3932a3ecd0f9bc406/design/component_diagram.png" alt="Apache Kafka for rescue" /></p>
+
+<p>That was huge change for a platform - making it reactive with all the writes (besides of creating accounts). That allowed
+to keep data log with Kafka, and replicate as many instances of Ranking or Submissions services as we want. But &hellip; there
+is always some but ;)</p>
+
+<p>Authentication was not coming through Apache Kafka. Till security is introduced within <strong>JAlgoArena</strong> on Apache Kafka level,
+I cannot imagine keeping there user names and passwords and recover from it ;) The only choice is to still use synchronous
+approach - so we cannot scale in here with <strong>Xodus</strong> database - we need scalable storage by itself and it&rsquo;s hard to achieve
+with embedded storage.</p>
+
+<h3 id="scalability-matters-cockroach-db-coming">Scalability matters - Cockroach DB coming</h3>
+
 <p>TBC</p>
 
 
@@ -248,7 +335,7 @@ about microservices. Keeping them small and decoupled allows on quick and easy c
     in <span itemprop="articleSection"><a href="/categories/db/">db</a> and <a href="/categories/general/">general</a></span>
   
   
-  using <span itemprop="wordCount">693</span> words.
+  using <span itemprop="wordCount">1275</span> words.
 </p>
 
         
