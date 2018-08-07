@@ -125,7 +125,9 @@ method, which looks like:
 
 {{< highlight kotlin >}}
 private fun <T> readonly(call: (PersistentStoreTransaction) -> T): T {
-    return store.computeInReadonlyTransaction { call(it as PersistentStoreTransaction) }
+    return store.computeInReadonlyTransaction { 
+        call(it as PersistentStoreTransaction) 
+    }
 }
 {{< /highlight >}}
 
@@ -233,7 +235,14 @@ val submissionsRepository: SubmissionsRepository
 
 fun findAll(): List<RankingSubmission> = try {
     submissionsRepository.findAll().map {
-        RankingSubmission(it.id!!, it.problemId, it.statusCode, it.userId, it.submissionTime, it.elapsedTime)
+        RankingSubmission(
+            it.id!!, 
+            it.problemId, 
+            it.statusCode, 
+            it.userId, 
+            it.submissionTime, 
+            it.elapsedTime
+        )
     }
 } 
 {{< /highlight >}}

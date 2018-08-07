@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-07T06:26:36&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-07T06:26:36&#43;02:00" />
-<meta itemprop="wordCount" content="2138">
+<meta itemprop="wordCount" content="2140">
 
 
 
@@ -252,7 +252,9 @@ separate database. Let&rsquo;s see how some of the repository methods are implem
 method, which looks like:</p>
 
 <div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">private</span> <span class="k">fun</span> &lt;T&gt; <span class="nf">readonly</span><span class="p">(</span><span class="n">call</span><span class="p">:</span> <span class="p">(</span><span class="n">PersistentStoreTransaction</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">T</span><span class="p">):</span> <span class="n">T</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">store</span><span class="p">.</span><span class="n">computeInReadonlyTransaction</span> <span class="p">{</span> <span class="n">call</span><span class="p">(</span><span class="n">it</span> <span class="k">as</span> <span class="n">PersistentStoreTransaction</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="n">store</span><span class="p">.</span><span class="n">computeInReadonlyTransaction</span> <span class="p">{</span> 
+        <span class="n">call</span><span class="p">(</span><span class="n">it</span> <span class="k">as</span> <span class="n">PersistentStoreTransaction</span><span class="p">)</span> 
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
 <p>As you see, it&rsquo;s just wrapping the code into readonly transaction (btw, such structures is why I love <strong>Kotlin</strong>) and passing store
@@ -354,7 +356,14 @@ interface:</p>
 
 <span class="k">fun</span> <span class="nf">findAll</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">RankingSubmission</span><span class="p">&gt;</span> <span class="p">=</span> <span class="k">try</span> <span class="p">{</span>
     <span class="n">submissionsRepository</span><span class="p">.</span><span class="n">findAll</span><span class="p">().</span><span class="n">map</span> <span class="p">{</span>
-        <span class="n">RankingSubmission</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="n">id</span><span class="o">!!</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">problemId</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">statusCode</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">userId</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">submissionTime</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">elapsedTime</span><span class="p">)</span>
+        <span class="n">RankingSubmission</span><span class="p">(</span>
+            <span class="n">it</span><span class="p">.</span><span class="n">id</span><span class="o">!!</span><span class="p">,</span> 
+            <span class="n">it</span><span class="p">.</span><span class="n">problemId</span><span class="p">,</span> 
+            <span class="n">it</span><span class="p">.</span><span class="n">statusCode</span><span class="p">,</span> 
+            <span class="n">it</span><span class="p">.</span><span class="n">userId</span><span class="p">,</span> 
+            <span class="n">it</span><span class="p">.</span><span class="n">submissionTime</span><span class="p">,</span> 
+            <span class="n">it</span><span class="p">.</span><span class="n">elapsedTime</span>
+        <span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span> </code></pre></div>
 
@@ -479,7 +488,7 @@ together with his friend <code>common sense</code> tells me to just keep single 
     in <span itemprop="articleSection"><a href="/categories/db/">db</a> and <a href="/categories/general/">general</a></span>
   
   
-  using <span itemprop="wordCount">2138</span> words.
+  using <span itemprop="wordCount">2140</span> words.
 </p>
 
         
