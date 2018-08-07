@@ -47,7 +47,7 @@ understanding of database per microservices moved me to idea - so let's do a mic
 with a data (I know, I know ... it was not best idea)!
 
 As my research went, I found [NeDB](https://github.com/louischatriot/nedb) as a great solution, I had my brand new NodeJS microservice
-and could deal with data there. In reality - as you see on diagram I used json file for handling problems data - so **NeDB** wasn't my only choice.
+and could deal with data there. In reality - as you see on diagram I used json file for handling problems data - so **NeDB** was not my only choice.
 
 The solution was pretty easy, you could save incoming json and then query for it (you can still check it on GitHub [page](https://github.com/spolnik/JAlgoArena-Data-Obsoleted)).
 I was creating new file based storage for both contexts: users and submissions to keep them separate. By the way - it was first sign of
@@ -174,7 +174,7 @@ Full source code is available in here - [XodusProblemRepository.kt](https://gith
 This approach worked for quite a while - and I run few AlgoCup contest using it in production environment without any issues, or closely without any issues ;)
 
 The biggest challenge was, that any single component which was using it was hard to scale horizontally. If I start replicating services, 
-how do I synchronize those file based storages?
+how do I synchronize those file based storage instances?
 
 And there was actually partial rescue:
 
@@ -278,7 +278,7 @@ data class Submission(
 
 And [generated SQL](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/db/jalgoarena.sql#L21) based on above:
 
-{{< highlight kotlin >}}
+{{< highlight sql >}}
 CREATE TABLE IF NOT EXISTS jalgoarena.submissions (
 	id INTEGER NOT NULL,
 	consumed_memory BIGINT NOT NULL,
@@ -302,5 +302,45 @@ CREATE TABLE IF NOT EXISTS jalgoarena.submissions (
 Old good SQL :)
 
 As you see it's very easy to deal with software development using it, but how about deployment and operations?
-Firstly, it's worth to say that **Cockroach DB** ... TBC
+Firstly, it's worth to say that **Cockroach DB** comes with [administration console](https://www.cockroachlabs.com/docs/stable/admin-ui-access-and-navigate.html).
+As it's written in **Go Lang**, deploying it is the matter of deploying docker image or binary - which makes it extremely
+easy to install.
 
+Take a look on [Nomad](https://nomadproject.io) job specification for downloading, installing and running cockroach db ([full sources](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/jalgoarena-cockroach.nomad)):
+
+{{< highlight hcl >}}
+artifact {
+    source  = "https://binaries.cockroachdb.com/cockroach-v2.0.4.${attr.kernel.name}-${attr.cpu.arch}.tgz"
+}
+
+config {
+    command = "local/cockroach-v2.0.4.${attr.kernel.name}-${attr.cpu.arch}/cockroach"
+    args    = [
+      "start",
+      "--insecure",
+      "--store=node1",
+      "--host", "${NOMAD_IP_tcp}",
+      "--port", "${NOMAD_PORT_tcp}",
+      "--http-port", "${NOMAD_PORT_http}",
+      "--join", "${COCKROACH_MASTER_HOST}"
+    ]
+}
+{{< /highlight >}}
+
+And here we are, happy with pretty decent easy to operate and scalable database, ready for exciting future!
+
+<h3 class="section-head" id="h-last-note"><a href="#h-last-note">Last note</a></h3>
+
+As you probably remember, I wrote above: 
+
+> Ok, my whole soul, mind and body was fulfilled with the idea - keep database specific to microservice.
+
+And again we left with single database, so how is it? In here I still have some doubts and open questions, more about
+pragmatism or laziness versus best practices. I have cluster representing my storage, which is used by two different
+services. They share database, although not using the other ones tables - which means responsibility is fairly divided.
+
+I think somewhere in the future I will just run two separate **Cockroach DB** clusters, as it's pretty easy to setup them,
+although still thinking about the value it would provide vs cost. Usually automation is solution, as with single click
+or command there is almost no additional cost of running separate instance - maybe just money it will eat on cloud where 
+you setup whole database cluster to just handle single table - that's something which still argues in my mind and `pragmatism`
+together with his friend `common sense` tells me to just keep single cluster ;)
