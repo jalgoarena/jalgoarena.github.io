@@ -100,7 +100,7 @@ Ok, my whole soul, mind and body was fulfilled with the idea - keep database spe
 with microservice - use some kind of embedded database and make usage of it as simple as possible. Oh - and I wanted to switch to [Spring Boot](https://spring.io/projects/spring-boot)
 which is de facto widely standard within Java ecosystem for creating microservices.
 
-I looked for quite a while, compared different approaches and finally found - [Xodus](). However badly the name sounds, it's pretty decent database created by **JetBrains**.
+I looked for quite a while, compared different approaches and finally found - [Xodus](https://jetbrains.github.io/xodus/). However badly the name sounds, it's pretty decent database created by **JetBrains**.
 **JetBrains Xodus** is a Java transactional schema-less embedded database - and they use it for own products e.g. __JetBrains YouTrack__. 
 You may read more about it in [here](https://github.com/JetBrains/xodus/wiki). Just to be clear, it's not a kindergarten tool,
 it is serious database capable to handle terabytes of data having transactions on board.
