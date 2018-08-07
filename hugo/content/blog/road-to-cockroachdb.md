@@ -308,13 +308,13 @@ easy to install.
 
 Take a look on [Nomad](https://nomadproject.io) job specification for downloading, installing and running cockroach db ([full sources](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/jalgoarena-cockroach.nomad)):
 
-{{< highlight hcl >}}
+{{< highlight json >}}
 artifact {
-    source  = "https://binaries.cockroachdb.com/cockroach-v2.0.4.${attr.kernel.name}-${attr.cpu.arch}.tgz"
+    source  = "https://binaries.cockroachdb.com/cockroach-v2.0.4.linux-amd64.tgz"
 }
 
 config {
-    command = "local/cockroach-v2.0.4.${attr.kernel.name}-${attr.cpu.arch}/cockroach"
+    command = "local/cockroach-v2.0.4.linux-amd64/cockroach"
     args    = [
       "start",
       "--insecure",
