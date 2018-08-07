@@ -84,4 +84,15 @@ and all users ones in [passport.js](https://github.com/spolnik/JAlgoArena-Data-O
 
 By the way, another insight I would have on below was that database code was coupled with business logic - which in reality should be handled by some repositories.
 
-As you see above, it was a bit better (finally we have real storage!) approach, but far from being ideal and we did not touch even scalability issues.  
+As you see above, it was a bit better (finally we have real storage!) approach, but far from being ideal and we did not touch even scalability issues.
+
+Oh ... one more point. At that time it was when I decided keeping problems within json was not a good idea. You know, we need **the** database ;)
+
+![All within db](https://github.com/jalgoarena/JAlgoArena/raw/d94f858e259a5cfdc514a3b0ce0ca9f94996ee56/design/component_diagram.png)
+
+Interestingly, at some of current versions I've reverted that approached and went back for json - as it's best serving this kind of data - and that's what I love
+about microservices. Keeping them small and decoupled allows on quick and easy changes, even rewrite of whole service when needed :)
+
+### Database per microservice
+
+TBC
