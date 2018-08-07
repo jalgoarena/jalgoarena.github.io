@@ -53,7 +53,7 @@ I was creating new file based storage for both contexts: users and submissions t
 keeping two responsibilities within single service. Creating database was fairly easy, there was 
 [simple code](https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/newLocalDb.js) to create it:
 
-```javascript
+```js
 var Datastore = require('nedb');
 
 module.exports = function (filename, logger) {
@@ -70,3 +70,14 @@ module.exports = function (filename, logger) {
 };
 ```
 
+Querying submissions looked like:
+
+```js
+submissionDb.find({userId: newSubmission.userId}, function (err, docs) {
+    if (err) return next(err);
+    return res.json(docs);
+});
+```
+
+All database operations you can find in [submissions.js](https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/routes/submission.js),
+and all users ones in [passport.js](https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/config/passport.js).

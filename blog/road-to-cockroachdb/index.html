@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-07T06:26:36&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-07T06:26:36&#43;02:00" />
-<meta itemprop="wordCount" content="521">
+<meta itemprop="wordCount" content="552">
 
 
 
@@ -188,7 +188,7 @@ I was creating new file based storage for both contexts: users and submissions t
 keeping two responsibilities within single service. Creating database was fairly easy, there was
 <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/newLocalDb.js">simple code</a> to create it:</p>
 
-<pre><code class="language-javascript">var Datastore = require('nedb');
+<pre><code class="language-js">var Datastore = require('nedb');
 
 module.exports = function (filename, logger) {
     var db = new Datastore({filename: filename, autoload: true});
@@ -203,6 +203,17 @@ module.exports = function (filename, logger) {
     return db;
 };
 </code></pre>
+
+<p>Querying submissions looked like:</p>
+
+<pre><code class="language-js">submissionDb.find({userId: newSubmission.userId}, function (err, docs) {
+    if (err) return next(err);
+    return res.json(docs);
+});
+</code></pre>
+
+<p>All database operations you can find in <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/routes/submission.js">submissions.js</a>,
+and all users ones in <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/config/passport.js">passport.js</a>.</p>
 
 
 </div>
@@ -222,7 +233,7 @@ module.exports = function (filename, logger) {
     in <span itemprop="articleSection"><a href="/categories/db/">db</a> and <a href="/categories/general/">general</a></span>
   
   
-  using <span itemprop="wordCount">521</span> words.
+  using <span itemprop="wordCount">552</span> words.
 </p>
 
         
