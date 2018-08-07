@@ -198,7 +198,7 @@ known database. Although there were few buts:
 
 - it's complex to operate
 - it's written in java, far from memory consumptions we have with C++ implementations
-- the support whiting frameworks is not that matured as with old good SQL databases
+- the support within frameworks is not that matured as with old good SQL databases
 
 But how do I find database which is easy to operate with, scalable, ideally having SQL interface which would allow on 
 reusing existing libraries (why not?) and of course, being open source and free for my usage.
