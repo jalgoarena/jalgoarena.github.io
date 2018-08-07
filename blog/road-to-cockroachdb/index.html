@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-07T06:26:36&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-07T06:26:36&#43;02:00" />
-<meta itemprop="wordCount" content="173">
+<meta itemprop="wordCount" content="521">
 
 
 
@@ -128,7 +128,7 @@
 <time class="post-time"><span class="icon">
   <i class="fa fa-clock-o" aria-hidden="true"></i>
 </span>
-<span>1 minute read</span>
+<span>3 minute read</span>
 <span class="icon">
  <i class="fa fa-pencil" aria-hidden="true"></i>
 </span>
@@ -141,6 +141,10 @@
 <div id="post" itemprop="articleBody">
     
     
+
+<h3 id="intro">Intro</h3>
+
+<p>To fully understand all words used across article - please refer to <a href="https://jalgoarena.github.io/docs/domain/">domain page</a>.</p>
 
 <h3 id="databases-in-microservices-world">Databases in microservices world</h3>
 
@@ -156,9 +160,49 @@ db to exist.</p>
 <p>Anyway, let&rsquo;s go back to <strong>JAlgoArena</strong> world. In this post I would like you to show how I dealt through months with data
 and how different problems moved me to different solutions.</p>
 
-<h3 id="with-monolith-it-s-simple-is-it">With monolith it&rsquo;s simple, is it?</h3>
+<h3 id="on-the-beginning-it-s-simple-is-it">On the beginning it&rsquo;s simple, is it?</h3>
 
-<p>TBC</p>
+<p>When I started first prototype of <strong>JAlgoArena</strong> there was no separate storage tool, and design was very simple:</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/4e141f19b47ad7be100c96112059ebd88e7532ec/design/component_diagram.png" alt="Initial Design" /></p>
+
+<p>State was there, but it was just hardcoded within Judge microservice. Not very useful for production use case, right?</p>
+
+<p>That was the time when I started to think what should I choose, and how it should look like. By whole the time I had in my mind
+the pattern that every microservice should have own database - and by the best efforts it should not be shared.</p>
+
+<p>Ok, I had already experience with <strong>Mongo DB</strong> and I loved how it managed state. Although I wanted more embedded approach,
+when I can keep database really close to microservices. Lets see my first approach to real world storage handling:</p>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/JAlgoArena/e13a8b73c0fa2bc60284e3b4deb76c453d0a2119/design/component_diagram.png" alt="First approach" /></p>
+
+<p>Great - in here I was not yet great with all <strong>DDD</strong> approaches and domain separation, so please excuse me ;) My initial
+understanding of database per microservices moved me to idea - so let&rsquo;s do a microservice with a responsibility for dealing
+with a data (I know, I know &hellip; it was not best idea)!</p>
+
+<p>As my research went, I found <a href="https://github.com/louischatriot/nedb">NeDB</a> as a great solution, I had my brand new NodeJS microservice
+and could deal with data there. In reality - as you see on diagram I used json file for handling problems data - so <strong>NeDB</strong> wasn&rsquo;t my only choice.</p>
+
+<p>The solution was pretty easy, you could save incoming json and then query for it (you can still check it on GitHub <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted">page</a>).
+I was creating new file based storage for both contexts: users and submissions to keep them separate. By the way - it was first sign of
+keeping two responsibilities within single service. Creating database was fairly easy, there was
+<a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/newLocalDb.js">simple code</a> to create it:</p>
+
+<pre><code class="language-javascript">var Datastore = require('nedb');
+
+module.exports = function (filename, logger) {
+    var db = new Datastore({filename: filename, autoload: true});
+    db.loadDatabase(function (err) {
+        if (err) {
+            logger.error(err);
+        } else {
+            logger.debug(&quot;DB loaded: &quot; + filename);
+        }
+    });
+
+    return db;
+};
+</code></pre>
 
 
 </div>
@@ -178,7 +222,7 @@ and how different problems moved me to different solutions.</p>
     in <span itemprop="articleSection"><a href="/categories/db/">db</a> and <a href="/categories/general/">general</a></span>
   
   
-  using <span itemprop="wordCount">173</span> words.
+  using <span itemprop="wordCount">521</span> words.
 </p>
 
         
