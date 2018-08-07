@@ -4,6 +4,7 @@ description = "How to scale your persistence keeping microservices design"
 categories = ["general", "db"]
 date = 2018-08-07T06:26:36+02:00
 weight = 20
+toc = true
 draft = false
 +++
 
