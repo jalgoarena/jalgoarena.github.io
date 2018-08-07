@@ -191,4 +191,116 @@ with embedded storage.
 
 <h3 class="section-head" id="h-cockroach"><a href="#h-cockroach">Scalability matters - Cockroach DB coming</a></h3>
 
-TBC
+Initially there was a plan to use [Cassandra](http://cassandra.apache.org/) - I knew it, I used it, it was scalable and well
+know database. Although there were few buts:
+
+- it's complex to operate
+- it's written in java, far from memory consumptions we have with C++ implementations
+- the support whiting frameworks is not that matured as with old good SQL databases
+
+But how do I find database which is easy to operate with, scalable, ideally having SQL interface which would allow on 
+reusing existing libraries (why not?) and of course, being open source and free for my usage.
+
+And you know what? I found it! I was so excited when I firstly heard about [Cockroach DB](https://www.cockroachlabs.com/).
+Btw, watch the movie there, it's great show case on what **Cockroach DB** is.
+
+Finally I get to the point where I can easily scale any kind of storage dependent database, having cloud friendly db on board:
+
+![Cockroach DB way](https://github.com/jalgoarena/JAlgoArena/raw/e4feab3e194176fc78a3fb5d8c6ebda16c05c5dd/design/component_diagram.png)
+
+There was few other changes happening, but that's how architecture looks like when I have just two types of data to store
+and scale: submissions and users. And you know what? Now I can use all goodies that frameworks brings for SQL world, or 
+to be more specific in here - **Postgres SQL** dialect.
+
+Let's look on example repository how it looks like, considering that with **Spring Boot** and **JPA** I only need to specify
+interface:
+
+{{< highlight kotlin >}}
+interface SubmissionsRepository : JpaRepository<Submission, Int> {
+    fun findByUserId(userId: String): List<Submission>
+    fun findBySubmissionId(submissionId: String): Submission?
+    fun findByProblemId(problemId: String): List<Submission>
+    fun findBySubmissionTimeLessThan(tillDate: LocalDateTime): List<Submission>
+}
+{{< /highlight >}}
+
+As you see it's very easy and convenient now to implement interface to data storage, see full source [here](https://github.com/jalgoarena/JAlgoArena-Submissions/blob/master/src/main/kotlin/com/jalgoarena/data/SubmissionsRepository.kt).
+
+Again, using it is like using plain **Java** interface
+
+{{< highlight kotlin >}}
+val submissionsRepository: SubmissionsRepository
+
+fun findAll(): List<RankingSubmission> = try {
+    submissionsRepository.findAll().map {
+        RankingSubmission(it.id!!, it.problemId, it.statusCode, it.userId, it.submissionTime, it.elapsedTime)
+    }
+} 
+{{< /highlight >}}
+
+To check full sources, take a look in [here](https://github.com/jalgoarena/JAlgoArena-Submissions/blob/master/src/main/kotlin/com/jalgoarena/web/SubmissionsController.kt).
+
+It's worth to mention, that thanks to using common interface (**JPA**) - I can plug embedded [H2](http://www.h2database.com/)
+database with just proper test configuration properties - making it easy to test based on specified interfaces and domain classes.
+
+Specifying domain is extremely easy too, let's check our object model for [submission](https://github.com/jalgoarena/JAlgoArena-Submissions/blob/master/src/main/kotlin/com/jalgoarena/domain/Submission.kt):
+
+{{< highlight kotlin >}}
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "submissions")
+data class Submission(
+        @Column(nullable = false)
+        var problemId: String = "",
+        @Column(nullable = false, length = 20000)
+        var sourceCode: String = "",
+        @Column(nullable = false)
+        var statusCode: String = "NOT_FOUND",
+        @Column(nullable = false)
+        var userId: String = "",
+        @Column(unique = true, nullable = false)
+        var submissionId: String = "",
+        @Column(nullable = false)
+        var submissionTime: LocalDateTime = LocalDateTime.now(),
+        @Column(nullable = false)
+        var elapsedTime: Double = -1.0,
+        @Column(nullable = false)
+        var consumedMemory: Long = 0L,
+        @Column(length = 20000)
+        var errorMessage: String? = null,
+        var passedTestCases: Int? = 0,
+        var failedTestCases: Int? = 0,
+        var token: String = "",
+        @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        var id: Int? = null
+)
+{{< /highlight >}}
+
+And [generated SQL](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/db/jalgoarena.sql#L21) based on above:
+
+{{< highlight kotlin >}}
+CREATE TABLE IF NOT EXISTS jalgoarena.submissions (
+	id INTEGER NOT NULL,
+	consumed_memory BIGINT NOT NULL,
+	elapsed_time DOUBLE PRECISION NOT NULL,
+	error_message STRING(20000) NULL,
+	failed_test_cases INTEGER NULL,
+	passed_test_cases INTEGER NULL,
+	problem_id STRING(255) NOT NULL,
+	source_code STRING(20000) NOT NULL,
+	status_code STRING(255) NOT NULL,
+	submission_id STRING(255) NOT NULL,
+	submission_time TIMESTAMP NOT NULL,
+	token STRING(255) NULL,
+	user_id STRING(255) NOT NULL,
+	CONSTRAINT "primary" PRIMARY KEY (id ASC),
+	UNIQUE INDEX uk_51d698q9pdvfldc75kskyxmlf (submission_id ASC),
+	FAMILY "primary" (id, consumed_memory, elapsed_time, error_message, failed_test_cases, passed_test_cases, problem_id, source_code, status_code, submission_id, submission_time, token, user_id)
+);
+{{< /highlight >}}
+
+Old good SQL :)
+
+As you see it's very easy to deal with software development using it, but how about deployment and operations?
+Firstly, it's worth to say that **Cockroach DB** ... TBC
+

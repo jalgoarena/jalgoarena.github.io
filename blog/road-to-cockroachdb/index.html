@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-07T06:26:36&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-07T06:26:36&#43;02:00" />
-<meta itemprop="wordCount" content="1275">
+<meta itemprop="wordCount" content="1864">
 
 
 
@@ -128,7 +128,7 @@
 <time class="post-time"><span class="icon">
   <i class="fa fa-clock-o" aria-hidden="true"></i>
 </span>
-<span>6 minute read</span>
+<span>9 minute read</span>
 <span class="icon">
  <i class="fa fa-pencil" aria-hidden="true"></i>
 </span>
@@ -313,7 +313,112 @@ with embedded storage.</p>
 
 <h3 class="section-head" id="h-cockroach"><a href="#h-cockroach">Scalability matters - Cockroach DB coming</a></h3>
 
-<p>TBC</p>
+<p>Initially there was a plan to use <a href="http://cassandra.apache.org/">Cassandra</a> - I knew it, I used it, it was scalable and well
+know database. Although there were few buts:</p>
+
+<ul>
+<li>it&rsquo;s complex to operate</li>
+<li>it&rsquo;s written in java, far from memory consumptions we have with C++ implementations</li>
+<li>the support whiting frameworks is not that matured as with old good SQL databases</li>
+</ul>
+
+<p>But how do I find database which is easy to operate with, scalable, ideally having SQL interface which would allow on
+reusing existing libraries (why not?) and of course, being open source and free for my usage.</p>
+
+<p>And you know what? I found it! I was so excited when I firstly heard about <a href="https://www.cockroachlabs.com/">Cockroach DB</a>.
+Btw, watch the movie there, it&rsquo;s great show case on what <strong>Cockroach DB</strong> is.</p>
+
+<p>Finally I get to the point where I can easily scale any kind of storage dependent database, having cloud friendly db on board:</p>
+
+<p><img src="https://github.com/jalgoarena/JAlgoArena/raw/e4feab3e194176fc78a3fb5d8c6ebda16c05c5dd/design/component_diagram.png" alt="Cockroach DB way" /></p>
+
+<p>There was few other changes happening, but that&rsquo;s how architecture looks like when I have just two types of data to store
+and scale: submissions and users. And you know what? Now I can use all goodies that frameworks brings for SQL world, or
+to be more specific in here - <strong>Postgres SQL</strong> dialect.</p>
+
+<p>Let&rsquo;s look on example repository how it looks like, considering that with <strong>Spring Boot</strong> and <strong>JPA</strong> I only need to specify
+interface:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">SubmissionsRepository</span> <span class="p">:</span> <span class="n">JpaRepository</span><span class="p">&lt;</span><span class="n">Submission</span><span class="p">,</span> <span class="n">Int</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">findByUserId</span><span class="p">(</span><span class="n">userId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Submission</span><span class="p">&gt;</span>
+    <span class="k">fun</span> <span class="nf">findBySubmissionId</span><span class="p">(</span><span class="n">submissionId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Submission</span><span class="p">?</span>
+    <span class="k">fun</span> <span class="nf">findByProblemId</span><span class="p">(</span><span class="n">problemId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Submission</span><span class="p">&gt;</span>
+    <span class="k">fun</span> <span class="nf">findBySubmissionTimeLessThan</span><span class="p">(</span><span class="n">tillDate</span><span class="p">:</span> <span class="n">LocalDateTime</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Submission</span><span class="p">&gt;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>As you see it&rsquo;s very easy and convenient now to implement interface to data storage, see full source <a href="https://github.com/jalgoarena/JAlgoArena-Submissions/blob/master/src/main/kotlin/com/jalgoarena/data/SubmissionsRepository.kt">here</a>.</p>
+
+<p>Again, using it is like using plain <strong>Java</strong> interface</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">submissionsRepository</span><span class="p">:</span> <span class="n">SubmissionsRepository</span>
+
+<span class="k">fun</span> <span class="nf">findAll</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">RankingSubmission</span><span class="p">&gt;</span> <span class="p">=</span> <span class="k">try</span> <span class="p">{</span>
+    <span class="n">submissionsRepository</span><span class="p">.</span><span class="n">findAll</span><span class="p">().</span><span class="n">map</span> <span class="p">{</span>
+        <span class="n">RankingSubmission</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="n">id</span><span class="o">!!</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">problemId</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">statusCode</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">userId</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">submissionTime</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="n">elapsedTime</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span> </code></pre></div>
+
+<p>To check full sources, take a look in <a href="https://github.com/jalgoarena/JAlgoArena-Submissions/blob/master/src/main/kotlin/com/jalgoarena/web/SubmissionsController.kt">here</a>.</p>
+
+<p>It&rsquo;s worth to mention, that thanks to using common interface (<strong>JPA</strong>) - I can plug embedded <a href="http://www.h2database.com/">H2</a>
+database with just proper test configuration properties - making it easy to test based on specified interfaces and domain classes.</p>
+
+<p>Specifying domain is extremely easy too, let&rsquo;s check our object model for <a href="https://github.com/jalgoarena/JAlgoArena-Submissions/blob/master/src/main/kotlin/com/jalgoarena/domain/Submission.kt">submission</a>:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@JsonIgnoreProperties</span><span class="p">(</span><span class="n">ignoreUnknown</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+<span class="n">@Entity</span>
+<span class="n">@Table</span><span class="p">(</span><span class="n">name</span> <span class="p">=</span> <span class="s">&#34;submissions&#34;</span><span class="p">)</span>
+<span class="k">data</span> <span class="k">class</span> <span class="nc">Submission</span><span class="p">(</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">problemId</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span> <span class="n">length</span> <span class="p">=</span> <span class="m">20000</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">sourceCode</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">statusCode</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;NOT_FOUND&#34;</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">userId</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">unique</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span> <span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">submissionId</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">submissionTime</span><span class="p">:</span> <span class="n">LocalDateTime</span> <span class="p">=</span> <span class="n">LocalDateTime</span><span class="p">.</span><span class="n">now</span><span class="p">(),</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">elapsedTime</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="p">-</span><span class="m">1.0</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">nullable</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">consumedMemory</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+        <span class="n">@Column</span><span class="p">(</span><span class="n">length</span> <span class="p">=</span> <span class="m">20000</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">errorMessage</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="k">var</span> <span class="py">passedTestCases</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+        <span class="k">var</span> <span class="py">failedTestCases</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+        <span class="k">var</span> <span class="py">token</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="n">@Id</span> <span class="n">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="p">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="n">AUTO</span><span class="p">)</span>
+        <span class="k">var</span> <span class="py">id</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+<span class="p">)</span></code></pre></div>
+
+<p>And <a href="https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/db/jalgoarena.sql#L21">generated SQL</a> based on above:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="n">jalgoarena</span><span class="p">.</span><span class="n">submissions</span> <span class="p">(</span>
+	<span class="n">id</span> <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">consumed_memory</span> <span class="n">BIGINT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">elapsed_time</span> <span class="n">DOUBLE</span> <span class="n">PRECISION</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">error_message</span> <span class="n">STRING</span><span class="p">(</span><span class="m">20000</span><span class="p">)</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">failed_test_cases</span> <span class="n">INTEGER</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">passed_test_cases</span> <span class="n">INTEGER</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">problem_id</span> <span class="n">STRING</span><span class="p">(</span><span class="m">255</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">source_code</span> <span class="n">STRING</span><span class="p">(</span><span class="m">20000</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">status_code</span> <span class="n">STRING</span><span class="p">(</span><span class="m">255</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">submission_id</span> <span class="n">STRING</span><span class="p">(</span><span class="m">255</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">submission_time</span> <span class="n">TIMESTAMP</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">token</span> <span class="n">STRING</span><span class="p">(</span><span class="m">255</span><span class="p">)</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">user_id</span> <span class="n">STRING</span><span class="p">(</span><span class="m">255</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+	<span class="n">CONSTRAINT</span> <span class="s">&#34;primary&#34;</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">id</span> <span class="n">ASC</span><span class="p">),</span>
+	<span class="n">UNIQUE</span> <span class="n">INDEX</span> <span class="n">uk_51d698q9pdvfldc75kskyxmlf</span> <span class="p">(</span><span class="n">submission_id</span> <span class="n">ASC</span><span class="p">),</span>
+	<span class="n">FAMILY</span> <span class="s">&#34;primary&#34;</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">consumed_memory</span><span class="p">,</span> <span class="n">elapsed_time</span><span class="p">,</span> <span class="n">error_message</span><span class="p">,</span> <span class="n">failed_test_cases</span><span class="p">,</span> <span class="n">passed_test_cases</span><span class="p">,</span> <span class="n">problem_id</span><span class="p">,</span> <span class="n">source_code</span><span class="p">,</span> <span class="n">status_code</span><span class="p">,</span> <span class="n">submission_id</span><span class="p">,</span> <span class="n">submission_time</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+<span class="p">);</span></code></pre></div>
+
+<p>Old good SQL :)</p>
+
+<p>As you see it&rsquo;s very easy to deal with software development using it, but how about deployment and operations?
+Firstly, it&rsquo;s worth to say that <strong>Cockroach DB</strong> &hellip; TBC</p>
 
 
 </div>
@@ -333,7 +438,7 @@ with embedded storage.</p>
     in <span itemprop="articleSection"><a href="/categories/db/">db</a> and <a href="/categories/general/">general</a></span>
   
   
-  using <span itemprop="wordCount">1275</span> words.
+  using <span itemprop="wordCount">1864</span> words.
 </p>
 
         
