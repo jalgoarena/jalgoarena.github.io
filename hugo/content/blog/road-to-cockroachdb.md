@@ -317,7 +317,7 @@ easy to install.
 
 Take a look on [Nomad](https://nomadproject.io) job specification for downloading, installing and running cockroach db ([full sources](https://github.com/jalgoarena/JAlgoArena-Nomad/blob/master/raw_exec/jalgoarena-cockroach.nomad)):
 
-{{< highlight json >}}
+{{< highlight terraform >}}
 artifact {
     source  = "https://binaries.cockroachdb.com/cockroach-v2.0.4.linux-amd64.tgz"
 }
