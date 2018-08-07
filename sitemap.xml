@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jalgoarena.github.io/blog/road-to-cockroachdb/</loc>
+    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jalgoarena.github.io/blog/continuous-delivery/</loc>
     <lastmod>2018-07-25T07:42:36+02:00</lastmod>
   </url>
@@ -43,12 +48,18 @@
   
   <url>
     <loc>https://jalgoarena.github.io/blog/</loc>
-    <lastmod>2018-07-25T07:42:36+02:00</lastmod>
+    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jalgoarena.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jalgoarena.github.io/categories/db/</loc>
+    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,13 +75,13 @@
   
   <url>
     <loc>https://jalgoarena.github.io/categories/general/</loc>
-    <lastmod>2018-07-25T07:42:36+02:00</lastmod>
+    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jalgoarena.github.io/</loc>
-    <lastmod>2018-07-25T07:42:36+02:00</lastmod>
+    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
   </url>
   
   <url>

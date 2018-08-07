@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Db on JAlgoArena Home</title>
+    <link>https://jalgoarena.github.io/categories/db/</link>
+    <description>Recent content in Db on JAlgoArena Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Aug 2018 06:26:36 +0200</lastBuildDate>
+    
+	<atom:link href="https://jalgoarena.github.io/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Road to Cockroach DB</title>
+      <link>https://jalgoarena.github.io/blog/road-to-cockroachdb/</link>
+      <pubDate>Tue, 07 Aug 2018 06:26:36 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/road-to-cockroachdb/</guid>
+      <description>Databases in microservices world Databases &amp;hellip; yes databases. In new microservice architecture world so much impact is put on serverless or function style components, where stateless code wins. And obviously that&amp;rsquo;s a great idea, when you have no state you have no need to synchronize nor to lock. Scaling is the matter of replication and understanding of flow is obvious in a immutable world.
+But still - can you imagine product bringing business value which does not handle state?</description>
+    </item>
+    
+  </channel>
+</rss>
