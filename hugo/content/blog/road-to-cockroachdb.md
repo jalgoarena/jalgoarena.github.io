@@ -53,7 +53,7 @@ I was creating new file based storage for both contexts: users and submissions t
 keeping two responsibilities within single service. Creating database was fairly easy, there was 
 [simple code](https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/newLocalDb.js) to create it:
 
-```js
+{{< highlight javascript >}}
 var Datastore = require('nedb');
 
 module.exports = function (filename, logger) {
@@ -68,16 +68,20 @@ module.exports = function (filename, logger) {
 
     return db;
 };
-```
+{{< /highlight >}}
 
 Querying submissions looked like:
 
-```js
+{{< highlight javascript >}}
 submissionDb.find({userId: newSubmission.userId}, function (err, docs) {
     if (err) return next(err);
     return res.json(docs);
 });
-```
+{{< /highlight >}}
 
 All database operations you can find in [submissions.js](https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/routes/submission.js),
 and all users ones in [passport.js](https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/config/passport.js).
+
+By the way, another insight I would have on below was that database code was coupled with business logic - which in reality should be handled by some repositories.
+
+As you see above, it was a bit better (finally we have real storage!) approach, but far from being ideal and we did not touch even scalability issues.  

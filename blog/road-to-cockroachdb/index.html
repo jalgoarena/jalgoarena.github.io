@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-07T06:26:36&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-07T06:26:36&#43;02:00" />
-<meta itemprop="wordCount" content="552">
+<meta itemprop="wordCount" content="609">
 
 
 
@@ -188,32 +188,36 @@ I was creating new file based storage for both contexts: users and submissions t
 keeping two responsibilities within single service. Creating database was fairly easy, there was
 <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/newLocalDb.js">simple code</a> to create it:</p>
 
-<pre><code class="language-js">var Datastore = require('nedb');
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Datastore</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;nedb&#39;</span><span class="p">);</span>
 
-module.exports = function (filename, logger) {
-    var db = new Datastore({filename: filename, autoload: true});
-    db.loadDatabase(function (err) {
-        if (err) {
-            logger.error(err);
-        } else {
-            logger.debug(&quot;DB loaded: &quot; + filename);
-        }
-    });
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">logger</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Datastore</span><span class="p">({</span><span class="nx">filename</span><span class="o">:</span> <span class="nx">filename</span><span class="p">,</span> <span class="nx">autoload</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">loadDatabase</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&#34;DB loaded: &#34;</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
 
-    return db;
-};
-</code></pre>
+    <span class="k">return</span> <span class="nx">db</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
 
 <p>Querying submissions looked like:</p>
 
-<pre><code class="language-js">submissionDb.find({userId: newSubmission.userId}, function (err, docs) {
-    if (err) return next(err);
-    return res.json(docs);
-});
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">submissionDb</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="nx">userId</span><span class="o">:</span> <span class="nx">newSubmission</span><span class="p">.</span><span class="nx">userId</span><span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">docs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p>All database operations you can find in <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/routes/submission.js">submissions.js</a>,
 and all users ones in <a href="https://github.com/spolnik/JAlgoArena-Data-Obsoleted/blob/master/server/config/passport.js">passport.js</a>.</p>
+
+<p>By the way, another insight I would have on below was that database code was coupled with business logic - which in reality should be handled by some repositories.</p>
+
+<p>As you see above, it was a bit better (finally we have real storage!) approach, but far from being ideal and we did not touch even scalability issues.</p>
 
 
 </div>
@@ -233,7 +237,7 @@ and all users ones in <a href="https://github.com/spolnik/JAlgoArena-Data-Obsole
     in <span itemprop="articleSection"><a href="/categories/db/">db</a> and <a href="/categories/general/">general</a></span>
   
   
-  using <span itemprop="wordCount">552</span> words.
+  using <span itemprop="wordCount">609</span> words.
 </p>
 
         
