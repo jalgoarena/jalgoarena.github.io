@@ -140,13 +140,11 @@
 <div id="post-box">
 <div id="post" itemprop="articleBody">
     
-    
-
-<h3 id="intro">Intro</h3>
+    <h3 class="section-head" id="h-intro"><a href="#h-intro">Intro</a></h3>
 
 <p>To fully understand all words used across article - please refer to <a href="https://jalgoarena.github.io/docs/domain/">domain page</a>.</p>
 
-<h3 id="databases-in-microservices-world">Databases in microservices world</h3>
+<h3 class="section-head" id="h-databases-microservices"><a href="#h-databases-microservices">Databases in microservices world</a></h3>
 
 <p>Databases &hellip; yes databases. In new microservice architecture world so much impact is put on serverless or function style
 components, where stateless code wins. And obviously that&rsquo;s a great idea, when you have no state you have no need to synchronize
@@ -160,7 +158,7 @@ db to exist.</p>
 <p>Anyway, let&rsquo;s go back to <strong>JAlgoArena</strong> world. In this post I would like you to show how I dealt through months with data
 and how different problems moved me to different solutions.</p>
 
-<h3 id="on-the-beginning-it-s-simple-is-it">On the beginning it&rsquo;s simple, is it?</h3>
+<h3 class="section-head" id="h-simple"><a href="#h-simple">On the beginning it's simple, is it?</a></h3>
 
 <p>When I started first prototype of <strong>JAlgoArena</strong> there was no separate storage tool, and design was very simple:</p>
 
@@ -226,7 +224,7 @@ and all users ones in <a href="https://github.com/spolnik/JAlgoArena-Data-Obsole
 <p>Interestingly, at some of current versions I&rsquo;ve reverted that approached and went back for json - as it&rsquo;s best serving this kind of data - and that&rsquo;s what I love
 about microservices. Keeping them small and decoupled allows on quick and easy changes, even rewrite of whole service when needed :)</p>
 
-<h3 id="database-per-microservice">Database per microservice</h3>
+<h3 class="section-head" id="h-db-per-microservice"><a href="#h-db-per-microservice">Database per microservice</a></h3>
 
 <p>Ok, my whole soul, mind and body was fulfilled with the idea - keep database specific to microservice. And again, I wanted to use something which can sit together
 with microservice - use some kind of embedded database and make usage of it as simple as possible. Oh - and I wanted to switch to <a href="https://spring.io/projects/spring-boot">Spring Boot</a>
@@ -313,7 +311,7 @@ I cannot imagine keeping there user names and passwords and recover from it ;) T
 approach - so we cannot scale in here with <strong>Xodus</strong> database - we need scalable storage by itself and it&rsquo;s hard to achieve
 with embedded storage.</p>
 
-<h3 id="scalability-matters-cockroach-db-coming">Scalability matters - Cockroach DB coming</h3>
+<h3 class="section-head" id="h-cockroach"><a href="#h-cockroach">Scalability matters - Cockroach DB coming</a></h3>
 
 <p>TBC</p>
 

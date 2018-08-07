@@ -7,11 +7,11 @@ weight = 20
 draft = false
 +++
 
-### Intro
+<h3 class="section-head" id="h-intro"><a href="#h-intro">Intro</a></h3>
 
 To fully understand all words used across article - please refer to [domain page](https://jalgoarena.github.io/docs/domain/).
 
-### Databases in microservices world
+<h3 class="section-head" id="h-databases-microservices"><a href="#h-databases-microservices">Databases in microservices world</a></h3>
 
 Databases ... yes databases. In new microservice architecture world so much impact is put on serverless or function style
 components, where stateless code wins. And obviously that's a great idea, when you have no state you have no need to synchronize
@@ -25,7 +25,7 @@ db to exist.
 Anyway, let's go back to **JAlgoArena** world. In this post I would like you to show how I dealt through months with data
 and how different problems moved me to different solutions.
 
-### On the beginning it's simple, is it?
+<h3 class="section-head" id="h-simple"><a href="#h-simple">On the beginning it's simple, is it?</a></h3>
 
 When I started first prototype of **JAlgoArena** there was no separate storage tool, and design was very simple:
 
@@ -93,7 +93,7 @@ Oh ... one more point. At that time it was when I decided keeping problems withi
 Interestingly, at some of current versions I've reverted that approached and went back for json - as it's best serving this kind of data - and that's what I love
 about microservices. Keeping them small and decoupled allows on quick and easy changes, even rewrite of whole service when needed :)
 
-### Database per microservice
+<h3 class="section-head" id="h-db-per-microservice"><a href="#h-db-per-microservice">Database per microservice</a></h3>
 
 Ok, my whole soul, mind and body was fulfilled with the idea - keep database specific to microservice. And again, I wanted to use something which can sit together 
 with microservice - use some kind of embedded database and make usage of it as simple as possible. Oh - and I wanted to switch to [Spring Boot](https://spring.io/projects/spring-boot)
@@ -188,6 +188,6 @@ I cannot imagine keeping there user names and passwords and recover from it ;) T
 approach - so we cannot scale in here with **Xodus** database - we need scalable storage by itself and it's hard to achieve
 with embedded storage.
 
-### Scalability matters - Cockroach DB coming
+<h3 class="section-head" id="h-cockroach"><a href="#h-cockroach">Scalability matters - Cockroach DB coming</a></h3>
 
 TBC
