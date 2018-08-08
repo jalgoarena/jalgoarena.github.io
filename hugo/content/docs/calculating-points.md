@@ -71,5 +71,6 @@ Secondly, amount of points which depends on time penalty:
   * e.g. if you submitted 2 times problem solution, 1 point will be taken from your final result
   * penalty is calculated till minimal amount of points for passed submission which is 1 point
 * Only best of your submissions per problem is considered within your score
+* In case of two people having same amount of points, the one who solved more problems will be higher in the ranking
 
 > Note: you can always verify points of your submission within problem ranking, which can be accessed on problem page
