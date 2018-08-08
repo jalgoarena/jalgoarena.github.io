@@ -66,7 +66,7 @@ Secondly, amount of points which depends on time penalty:
   
 <h3 class="section-head" id="h-other-rules"><a href="#h-other-rules">Other Rules</a></h3>
 
-* In addition, problem solution with best time from all submissions (independently from language) gets 1 bonus point
+* In addition, problem solution with best time from all submissions gets 1 bonus point
 * Every additional submission you get penalty:
   * e.g. if you submitted 2 times problem solution, 1 point will be taken from your final result
   * penalty is calculated till minimal amount of points for passed submission which is 1 point
