@@ -99,37 +99,37 @@ There is few different type of activities which defines underlying technology an
         <th>Receives</th>
     </tr>
     <tr>
-        <td>JAlgoArena-UI</td>
+        <td>UI</td>
         <td>post:user post:credentials get:user get:users get:ranking post:submission</td>
         <td>publish:ranking publish:submission publish:user (WebSocket)</td>
     </tr>
     <tr>
-        <td>JAlgoArena-Auth</td>
+        <td>Auth</td>
         <td>publish:user</td>
         <td>post:user post:credentials get:user get:users</td>
     </tr>
     <tr>
-        <td>JAlgoArena-Queue</td>
+        <td>Queue</td>
         <td>publish:submission,state:new</td>
         <td>post:submission</td>
     </tr>
     <tr>
-        <td>JAlgoArena-Submissions</td>
+        <td>Submissions</td>
         <td>publish:submission,state:saved</td>
         <td>publish:submission,state:new publish:submission,state:result</td>
     </tr>
     <tr>
-        <td>JAlgoArena-Judge</td>
+        <td>Judge</td>
         <td>publish:submission,state:result</td>
         <td>publish:submission,state:saved</td>
     </tr>
     <tr>
-        <td>JAlgoArena-Ranking</td>
+        <td>Ranking</td>
         <td>publish:ranking</td>
         <td>publish:submission,state:result get:ranking</td>
     </tr>
     <tr>
-        <td>JAlgoArena-Events</td>
+        <td>Events</td>
         <td>publish:ranking publish:submission publish:user (WebSocket)</td>
         <td>publish:ranking publish:submission publish:user (Messaging)</td>
     </tr>
