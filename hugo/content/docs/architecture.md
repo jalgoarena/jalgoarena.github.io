@@ -37,7 +37,7 @@ JAlgoArena conducts many parts, which can be divided to:
 JAlgoArena microservices:
 
 - [JAlgoArena UI](https://github.com/spolnik/JAlgoArena-UI) - host UI components, runs reverse proxy using Service Discovery for resolving edge service
-- [JAlgoArena Auth Server](https://github.com/spolnik/JAlgoArena-Auth) - microservice responsible for authentication and storing users data
+- [JAlgoArena Auth](https://github.com/spolnik/JAlgoArena-Auth) - microservice responsible for authentication and storing users data
 - [JAlgoArena Queue](https://github.com/spolnik/JAlgoArena-Queue) - microservice serving queue for incoming submissions, publishing them to Apache Kafka
 - [JAlgoArena Submissions](https://github.com/spolnik/JAlgoArena-Submissions) - microservice storing all submissions and serving data based on collected data
 - [JAlgoArena Judge](https://github.com/spolnik/JAlgoArena-Judge) - main microservice responsible for judging incoming submissions

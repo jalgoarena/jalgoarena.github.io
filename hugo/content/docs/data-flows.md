@@ -79,14 +79,63 @@ There is few different type of activities which defines underlying technology an
     <tr>
         <td>Submit solution</td>
         <td>
-            9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 
-            <br/>12 store:save,kind:submission 13 publish:submission,state:saved 
-            <br/>14 consume:submission,state:saved 15 publish:submission,state:result 
-            <br/>16 consume:submission,state:result 12 store:save,kind:submission 17 publish:ranking
+            9 post:submission 10 publish:submission,state:new 11 store:save,kind:submission 
+            <br/>12 publish:submission,state:saved 13 publish:submission,state:result 
+            <br/>11 store:save,kind:submission 14 publish:ranking
         </td>
     </tr>
     <tr>
         <td>Query ranking</td>
-        <td>18 get:ranking, 19 store:load,kind:ranking</td>
+        <td>15 get:ranking, 16 store:load,kind:ranking</td>
     </tr>    
+</table>
+
+<h3 class="section-head" id="h-microservices"><a href="#h-microservices">Microservices</a></h3>
+
+<table class="bordered striped">
+    <tr>
+        <th>Microservice</th>
+        <th>Sends</th>
+        <th>Receives</th>
+    </tr>
+    <tr>
+        <td>JAlgoArena-UI</td>
+        <td>post:user post:credentials get:user get:users get:ranking post:submission</td>
+        <td>publish:ranking publish:submission publish:user (WebSocket)</td>
+    </tr>
+    <tr>
+        <td>JAlgoArena-Auth</td>
+        <td>publish:user</td>
+        <td>post:user post:credentials get:user get:users</td>
+    </tr>
+    <tr>
+        <td>JAlgoArena-Queue</td>
+        <td>publish:submission,state:new</td>
+        <td>post:submission</td>
+    </tr>
+    <tr>
+        <td>JAlgoArena-Submissions</td>
+        <td>publish:submission,state:saved</td>
+        <td>publish:submission,state:new publish:submission,state:result</td>
+    </tr>
+    <tr>
+        <td>JAlgoArena-Judge</td>
+        <td>publish:submission,state:result</td>
+        <td>publish:submission,state:saved</td>
+    </tr>
+    <tr>
+        <td>JAlgoArena-Ranking</td>
+        <td>publish:ranking</td>
+        <td>publish:submission,state:result get:ranking</td>
+    </tr>
+    <tr>
+        <td>JAlgoArena-Events</td>
+        <td>publish:ranking publish:submission publish:user (WebSocket)</td>
+        <td>publish:ranking publish:submission publish:user (Messaging)</td>
+    </tr>
+    <tr>
+        <td>Cockroach DB Cluster</td>
+        <td>-</td>
+        <td>store:*</td>
+    </tr>
 </table>
