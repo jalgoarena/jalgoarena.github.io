@@ -134,7 +134,7 @@ There is few different type of activities which defines underlying technology an
         <td>publish:ranking publish:submission publish:user (Messaging)</td>
     </tr>
     <tr>
-        <td>Cockroach DB Cluster</td>
+        <td>Cockroach DB</td>
         <td>-</td>
         <td>store:*</td>
     </tr>
