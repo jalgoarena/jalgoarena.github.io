@@ -2,7 +2,7 @@
 title = "Technology"
 description = "JAlgoArena external components"
 date = 2018-08-02T07:35:06+02:00
-weight = 40
+weight = 80
 draft = false
 bref = "This page describes all external components used across JAlgoArena architecture"
 toc = true
