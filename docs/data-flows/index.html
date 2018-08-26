@@ -179,15 +179,12 @@ together with user account data are used in ranking generation.</p>
     </tr>
     <tr>
         <td>Submit solution (part 1)</td>
-        <td>9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 12 store:save,kind:submission, ...</td>
-    </tr>
-    <tr>
-        <td>Submit solution (part 2)</td>
-        <td>..., 13 publish:submission,state:saved 14 consume:submission,state:saved 15 publish:submission,state:result, ...</td>
-    </tr>
-    <tr>
-        <td>Submit solution (part 3)</td>
-        <td>..., 16 consume:submission,state:result 12 store:save,kind:submission 17 publish:ranking</td>
+        <td>
+            9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 
+            12 store:save,kind:submission 13 publish:submission,state:saved 
+            14 consume:submission,state:saved 15 publish:submission,state:result 
+            16 consume:submission,state:result 12 store:save,kind:submission 17 publish:ranking
+        </td>
     </tr>
     <tr>
         <td>Query ranking</td>
