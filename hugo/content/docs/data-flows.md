@@ -2,7 +2,7 @@
 title = "Data Flows"
 description = "Describing data driven flows within JAlgoArena"
 date = 2018-08-26T12:52:51+02:00
-weight = 20
+weight = 30
 draft = false
 bref = "It will explain all JAlgoArena specific data flows which models interaction of users with a platform"
 toc = true

@@ -7,11 +7,6 @@
   </url>
   
   <url>
-    <loc>https://jalgoarena.github.io/docs/data-flows/</loc>
-    <lastmod>2018-08-26T12:52:51+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jalgoarena.github.io/blog/road-to-cockroachdb/</loc>
     <lastmod>2018-08-07T06:26:36+02:00</lastmod>
   </url>
@@ -34,6 +29,11 @@
   <url>
     <loc>https://jalgoarena.github.io/blog/welcome/</loc>
     <lastmod>2018-07-20T21:27:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jalgoarena.github.io/docs/data-flows/</loc>
+    <lastmod>2018-08-26T12:52:51+02:00</lastmod>
   </url>
   
   <url>
@@ -70,7 +70,7 @@
   
   <url>
     <loc>https://jalgoarena.github.io/docs/</loc>
-    <lastmod>2018-08-26T12:52:51+02:00</lastmod>
+    <lastmod>2018-07-25T07:31:44+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -86,7 +86,7 @@
   
   <url>
     <loc>https://jalgoarena.github.io/</loc>
-    <lastmod>2018-08-26T12:52:51+02:00</lastmod>
+    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
   </url>
   
   <url>
