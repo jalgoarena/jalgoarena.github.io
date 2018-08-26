@@ -146,6 +146,10 @@ There is few different type of activities which defines underlying technology an
 
 <h3 class="section-head" id="h-diagrams"><a href="#h-diagrams">Diagrams</a></h3>
 
-<h5>User Store data flow diagram</h5>
+<h5>User data flow diagram</h5>
 
 ![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_user.png)
+
+<h5>Submissions data flow diagram</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission.png)
