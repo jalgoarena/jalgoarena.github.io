@@ -44,12 +44,12 @@
     </item>
     
     <item>
-      <title>Data Flows</title>
-      <link>https://jalgoarena.github.io/docs/data-flows/</link>
+      <title>Data Flow</title>
+      <link>https://jalgoarena.github.io/docs/data-flow/</link>
       <pubDate>Sun, 26 Aug 2018 12:52:51 +0200</pubDate>
       
-      <guid>https://jalgoarena.github.io/docs/data-flows/</guid>
-      <description>Intro In JAlgoArena we distinct two areas of data flow, one which is fairly synchronous about creating user accounts, and then using that information for accessing platform, authorizing users or just to enhance rankings.
+      <guid>https://jalgoarena.github.io/docs/data-flow/</guid>
+      <description>Intro In JAlgoArena we distinct two areas of data flow, one about creating user accounts, and then using that information for accessing platform, authorizing users or just to enhance rankings.
 Second, the core one is about processing user submissions, judging them and then storing results. Again, those results together with user account data are used in ranking generation.
 Action types There is few different type of activities which defines underlying technology and approach, below all used are listed and explained.</description>
     </item>
