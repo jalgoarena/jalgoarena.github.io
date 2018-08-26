@@ -6,7 +6,7 @@
     <description>Recent content in JAlgoArena on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Aug 2018 06:26:36 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 Aug 2018 12:52:51 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,17 @@
       <description>Welcome After you open JAlgoArena Web UI - you will see below page. You will have access to menu moving you to other screens.
  Note: the right up corner green bulb indicates that you are connected with WebSocket service. This service will bring you live updates to rankings and submissions.
  Problems Problems screen give you access to full list of problems. There is few things which are worth to know:</description>
+    </item>
+    
+    <item>
+      <title>Data Flows</title>
+      <link>https://jalgoarena.github.io/docs/data-flows/</link>
+      <pubDate>Sun, 26 Aug 2018 12:52:51 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/docs/data-flows/</guid>
+      <description>Intro In JAlgoArena we distinct two areas of data flow, one which is fairly synchronous about creating user accounts, and then using that information for accessing platform, authorizing users or just to enhance rankings.
+Second, the core one is about processing user submissions, judging them and then storing results. Again, those results together with user account data are used in ranking generation.
+User Account  Activity Message flow   Sign up 1 post:user 2 store:save,kind:user 3 publish:user   Log in (credentials) 4 post:credentials 5 store:load,kind:user   Log in (token) 6 get:user 5 store:load,kind:user   Query Users 7 get:users 8 store:list,kind:user   Submissions  Activity Message flow   Submit solution (part 1) 9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 12 store:save,kind:submission, .</description>
     </item>
     
     <item>
