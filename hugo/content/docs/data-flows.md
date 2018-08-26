@@ -77,7 +77,7 @@ There is few different type of activities which defines underlying technology an
         <th>Message flow</th>
     </tr>
     <tr>
-        <td>Submit solution (part 1)</td>
+        <td>Submit solution</td>
         <td>
             9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 
             12 store:save,kind:submission 13 publish:submission,state:saved 
