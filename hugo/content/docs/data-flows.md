@@ -16,6 +16,34 @@ using that information for accessing platform, authorizing users or just to enha
 Second, the core one is about processing user submissions, judging them and then storing results. Again, those results
 together with user account data are used in ranking generation.
 
+<h3 class="section-head" id="h-action-types"><a href="#h-action-types">Action types</a></h3>
+
+There is few different type of activities which defines underlying technology and approach, below all used are listed and explained.
+
+<table class="bordered striped">
+    <tr>
+        <th>Technology</th>
+        <th>Activities</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <td>REST API</td>
+        <td>get, post</td>
+        <td>synchronous</td>
+    </tr>
+    <tr>
+        <td>Messaging</td>
+        <td>publish, consume</td>
+        <td>asynchronous</td>
+    </tr>
+    <tr>
+        <td>Persistence</td>
+        <td>store</td>
+        <td>synchronous</td>
+    </tr>
+</table>
+
+
 <h3 class="section-head" id="h-user"><a href="#h-user">User Account</a></h3>
 
 <table class="bordered striped">

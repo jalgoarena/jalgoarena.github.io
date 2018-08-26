@@ -51,7 +51,7 @@
       <guid>https://jalgoarena.github.io/docs/data-flows/</guid>
       <description>Intro In JAlgoArena we distinct two areas of data flow, one which is fairly synchronous about creating user accounts, and then using that information for accessing platform, authorizing users or just to enhance rankings.
 Second, the core one is about processing user submissions, judging them and then storing results. Again, those results together with user account data are used in ranking generation.
-User Account  Activity Message flow   Sign up 1 post:user 2 store:save,kind:user 3 publish:user   Log in (credentials) 4 post:credentials 5 store:load,kind:user   Log in (token) 6 get:user 5 store:load,kind:user   Query Users 7 get:users 8 store:list,kind:user   Submissions  Activity Message flow   Submit solution (part 1)  9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 12 store:save,kind:submission 13 publish:submission,state:saved 14 consume:submission,state:saved 15 publish:submission,state:result 16 consume:submission,state:result 12 store:save,kind:submission 17 publish:ranking    Query ranking 18 get:ranking, 19 store:load,kind:ranking   </description>
+Action types There is few different type of activities which defines underlying technology and approach, below all used are listed and explained.</description>
     </item>
     
     <item>
