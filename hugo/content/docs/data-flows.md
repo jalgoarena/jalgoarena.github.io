@@ -80,9 +80,9 @@ There is few different type of activities which defines underlying technology an
         <td>Submit solution</td>
         <td>
             9 post:submission 10 publish:submission,state:new 11 consume:submission,state:new 
-            12 store:save,kind:submission 13 publish:submission,state:saved 
-            14 consume:submission,state:saved 15 publish:submission,state:result 
-            16 consume:submission,state:result 12 store:save,kind:submission 17 publish:ranking
+            <br/>12 store:save,kind:submission 13 publish:submission,state:saved 
+            <br/>14 consume:submission,state:saved 15 publish:submission,state:result 
+            <br/>16 consume:submission,state:result 12 store:save,kind:submission 17 publish:ranking
         </td>
     </tr>
     <tr>
