@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Aug 2018 06:26:36 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Aug 2018 10:02:19 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://jalgoarena.github.io/blog/microservices/</link>
+      <pubDate>Mon, 27 Aug 2018 10:02:19 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/microservices/</guid>
+      <description>Intro Nowadays every one is speaking about microservices and you can get an impression they are everywhere. There is obviously reason for that, as they are solving one of significant problems we faced with monolithic applications - dealing with complexity and possibility to scale our software to meet the needs.
+Now, we need to know that microservices are not equal - I do not think there is already community approved single definition of microservice - and still there is many misleading or just wrongs ones around.</description>
+    </item>
     
     <item>
       <title>Road to Cockroach DB</title>

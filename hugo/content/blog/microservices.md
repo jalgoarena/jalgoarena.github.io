@@ -50,7 +50,7 @@ you need to remember that Kubernetes is containers focused when Nomad allows on 
 of resource, like jar on any executable).
 
 Communicating asynchronously using lightweight mechanism - that's neat requirement and meeting it
-can make our architecture additive - I can add new functionality without touching any part of existing
+can make our architecture scalable and additive - I can add new functionality without touching any part of existing
 components. To achieve that proper lightweight mechanism shall be added - and that's a bit of challenge
 if you remember that in our definition we require it should be platform- and language- independent
 environment. There is few technologies/approaches which can help to deal with that, like gRPC, Apache Kafka, REST,
