@@ -58,8 +58,9 @@ WebSockets, routing using pattern matching, etc. But are all of them asynchronou
 Definitely REST/HTTP will not make it easy to do asynchronous way, and the question on lightweight
 adds to that even more - if something requires sever do we still name it lightweight? gRPC seems
 closest to address that - but that's definitely an area where I need to gain more knowledge and experience.
-(Someone may say AKKA with actors would make it working - but I'm not sure this solution can be named
-lightweight?).
+
+> Someone may say AKKA with actors would make it working - but I'm not sure this solution can be named
+lightweight?
 
 ### Gaps
 
