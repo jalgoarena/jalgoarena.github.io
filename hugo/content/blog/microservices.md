@@ -29,25 +29,25 @@ closest to the way I see them and understand.
 
 > It does not mean I've achieved that with JAlgoArena architecture, as I'm constantly learning the definition
 I will post is actually based on my recent learning and all experience I get till the time, and something
-I want to aim in long term architecture design
+I want to aim in long term architecture design.
 
 ### Microservice Definition
 
 Microservices are independently deployable processes communicating asynchronously using lightweight
-mechanism focused on specific business capabilities running in an automated but platform- and language-
-independent environment.
+mechanism focused on specific business capabilities running in an automated but platform- and 
+language-independent environment.
 
 Additionally, microservice is an independent software component that takes no more than one iteration to build
 and deploy.
 
 ### Explanations
 
-Here is my comment on above, as it's pretty wide definition and leaves some space for more clarity.
+Here is my comment on above as it's pretty wide definition and leaves some space for a more clarity.
 
-Independently deployable process is pretty clear - and if we group it together with building it in a iteration
-time - it will quickly mean there will be tens/hundreds of them and we have to have automated deployment
-process. In JAlgoArena I'm using Nomad jobs to specify deployment and allow Nomad scheduler to do
-everything needed to deploy and scale the platform. 
+Independently deployable process is kind of clear - and if we bundle it together with building it within
+a single iteration - it will quickly mean there will be tens/hundreds of them and we have to have 
+automated deployment solution. In JAlgoArena I'm using Nomad jobs to specify deployment and allow Nomad 
+scheduler to do everything necessary to deploy and scale the microservices. 
 
 > I know Kubernetes is de facto standard and I plan to add Kubernetes based deployment, although
 you need to remember that Kubernetes is containers focused while Nomad allows on running any kind
