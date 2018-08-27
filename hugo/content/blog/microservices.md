@@ -54,14 +54,20 @@ you need to remember that Kubernetes is containers focused while Nomad allows on
 of resource, like jar or any executable).
 
 Communicating asynchronously using lightweight mechanism - that's neat requirement and meeting it
-can make our architecture scalable and additive - I can add new functionality without touching any part of existing
-components. To achieve that proper lightweight mechanism shall be added - and that's a bit of challenge
-if you remember that in our definition we require it should be platform- and language- independent
-environment. There is few technologies/approaches which can help to deal with that, like gRPC, Apache Kafka, REST,
-WebSockets, routing using pattern matching, etc. But are all of them asynchronous by design?
-Definitely REST/HTTP will not make it easy to do asynchronous way, and the question on lightweight
-adds to that even more - if something requires sever do we still name it lightweight? gRPC seems
-closest to address that - but that's definitely an area where I need to gain more knowledge and experience.
+can make our architecture scalable and additive.
+ 
+> Additive architecture means I can add new functionality without touching any part of existing
+components. 
+
+To achieve that a lightweight mechanism shall be added - and that's a bit of challenge
+if you remember that in our definition we require that it runs within platform- and language-independent
+environment. There is few technologies/approaches which can help with that, like gRPC, Apache Kafka, REST,
+WebSockets, routing using pattern matching, etc.
+
+But are all of them asynchronous by design? Definitely REST/HTTP will not make it easy to do asynchronous way, 
+and the question on lightweight adds to that even more - if something requires sever do we still name 
+it lightweight? gRPC seems closest to address that - but that's definitely an area where I need to gain 
+more knowledge and experience.
 
 > Someone may say AKKA with actors would make it working - but I'm not sure this solution can be named
 lightweight?
