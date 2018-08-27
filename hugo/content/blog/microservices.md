@@ -25,7 +25,7 @@ in a network - where you may gain some benefits but usually it's just adding mor
 complex monolith app.
 
 To avoid misconception of what do I mean by microservice - I would like to write down definition which is
-closest to my heart and the way I see them and understand.
+closest to the way I see them and understand.
 
 > It does not mean I've achieved that with JAlgoArena architecture, as I'm constantly learning the definition
 I will post is actually based on my recent learning and all experience I get till the time, and something
