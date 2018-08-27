@@ -15,8 +15,9 @@ There is obviously a reason for that, as they solve significant problem we face 
 monolithic applications - dealing with complexity and possibility to scale our software to meet the 
 ever growing needs.
 
-Now, we need to know that microservices are not equal - I do not think there is already community approved
-single definition of microservice - and still there is many misleading or just wrongs ones around.
+Now, you need to realise that microservice definitions are not equal - I do not think there is already 
+community approved single definition of microservice - and yet there is still many misleading or 
+just wrong ones around.
 
 Foremost I would like to avoid following concepts of distributed monolith - where instead of dealing with
 single process you divide your app to parts which are still tightly coupled although they are distributed
