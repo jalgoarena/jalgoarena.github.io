@@ -28,7 +28,7 @@
       <pubDate>Mon, 27 Aug 2018 10:02:19 +0200</pubDate>
       
       <guid>https://jalgoarena.github.io/blog/microservices/</guid>
-      <description>Microservices done right Nowadays every one is speaking about microservices and you can get an impression they are everywhere. There is obviously reason for that, as they are solving one of significant problems we faced with monolithic applications - dealing with complexity and possibility to scale our software to meet the needs.
+      <description>Microservices done right Nowadays every one is speaking about microservices and you can get an impression they are everywhere. There is obviously a reason for that, as they solve significant problem we face with monolithic applications - dealing with complexity and possibility to scale our software to meet the ever growing needs.
 Now, we need to know that microservices are not equal - I do not think there is already community approved single definition of microservice - and still there is many misleading or just wrongs ones around.</description>
     </item>
     
