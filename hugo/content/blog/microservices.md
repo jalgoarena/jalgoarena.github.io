@@ -74,12 +74,13 @@ lightweight?
 
 ### Gaps
 
-There is still lots of work to do within JAlgoArena to make existing microservices close to the proposed definition.
+There is still lots of work to do within JAlgoArena to make existing microservices close to above definition.
 
 The biggest challenges are:
 
 - microservices (or some of them) are still too big
+- UI should not contain any business logic
 - much of communication (queries) is synchronous
-- I'm using REST everywhere, but for internal microservices communication gRPC as example can be better
+- I'm using REST everywhere for queries, but for internal microservices communication gRPC as example can be better
 solution to match the desired microservices definition (lightweight asynchronous communication, programming 
-language agnostic).  
+language agnostic).
