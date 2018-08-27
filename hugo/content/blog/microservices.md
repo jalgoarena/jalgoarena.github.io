@@ -45,9 +45,11 @@ Here is my comment on above, as it's pretty wide definition and leaves some spac
 Independently deployable process is pretty clear - and if we group it together with building it in a iteration
 time - it will quickly mean there will be tens/hundreds of them and we have to have automated deployment
 process. In JAlgoArena I'm using Nomad jobs to specify deployment and allow Nomad scheduler to do
-everything needed to deploy and scale the platform. (I plan to do add Kubernetes based deployment too, although
-you need to remember that Kubernetes is containers focused when Nomad allows on running any kind
-of resource, like jar on any executable).
+everything needed to deploy and scale the platform. 
+
+> I know Kubernetes is de facto standard and I plan to add Kubernetes based deployment, although
+you need to remember that Kubernetes is containers focused while Nomad allows on running any kind
+of resource, like jar or any executable).
 
 Communicating asynchronously using lightweight mechanism - that's neat requirement and meeting it
 can make our architecture scalable and additive - I can add new functionality without touching any part of existing

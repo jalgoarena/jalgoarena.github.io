@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-27T10:02:19&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-27T10:02:19&#43;02:00" />
-<meta itemprop="wordCount" content="616">
+<meta itemprop="wordCount" content="622">
 
 
 
@@ -181,9 +181,13 @@ and deploy.</p>
 <p>Independently deployable process is pretty clear - and if we group it together with building it in a iteration
 time - it will quickly mean there will be tens/hundreds of them and we have to have automated deployment
 process. In JAlgoArena I&rsquo;m using Nomad jobs to specify deployment and allow Nomad scheduler to do
-everything needed to deploy and scale the platform. (I plan to do add Kubernetes based deployment too, although
-you need to remember that Kubernetes is containers focused when Nomad allows on running any kind
-of resource, like jar on any executable).</p>
+everything needed to deploy and scale the platform.</p>
+
+<blockquote>
+<p>I know Kubernetes is de facto standard and I plan to add Kubernetes based deployment, although
+you need to remember that Kubernetes is containers focused while Nomad allows on running any kind
+of resource, like jar or any executable).</p>
+</blockquote>
 
 <p>Communicating asynchronously using lightweight mechanism - that&rsquo;s neat requirement and meeting it
 can make our architecture scalable and additive - I can add new functionality without touching any part of existing
@@ -232,7 +236,7 @@ language agnostic).<br /></li>
     in <span itemprop="articleSection"><a href="/categories/architecture/">architecture</a></span>
   
   
-  using <span itemprop="wordCount">616</span> words.
+  using <span itemprop="wordCount">622</span> words.
 </p>
 
         
