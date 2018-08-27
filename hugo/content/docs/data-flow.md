@@ -137,4 +137,19 @@ There is few different type of activities which defines underlying technology an
         <td>publish:ranking publish:submission publish:user (WebSocket)</td>
         <td>publish:ranking publish:submission publish:user (Messaging)</td>
     </tr>
+    <tr>
+        <td>User-Store</td>
+        <td>-</td>
+        <td>store:*,kind:user</td>
+    </tr>
 </table>
+
+<h3 class="section-head" id="h-diagrams"><a href="#h-diagrams">Diagrams</a></h3>
+
+<h5>User data flow diagram</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_user.png)
+
+<h5>Submissions data flow diagram</h5>
+
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission.png)
