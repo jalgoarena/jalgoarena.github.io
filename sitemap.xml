@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jalgoarena.github.io/blog/microservices/</loc>
+    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jalgoarena.github.io/blog/road-to-cockroachdb/</loc>
     <lastmod>2018-08-07T06:26:36+02:00</lastmod>
   </url>
@@ -52,13 +57,20 @@
   </url>
   
   <url>
+    <loc>https://jalgoarena.github.io/categories/architecture/</loc>
+    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jalgoarena.github.io/blog/</loc>
-    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
+    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jalgoarena.github.io/categories/</loc>
+    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -86,7 +98,7 @@
   
   <url>
     <loc>https://jalgoarena.github.io/</loc>
-    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
+    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
   </url>
   
   <url>

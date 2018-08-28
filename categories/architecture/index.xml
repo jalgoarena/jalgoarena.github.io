@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on JAlgoArena Home</title>
+    <link>https://jalgoarena.github.io/categories/architecture/</link>
+    <description>Recent content in Architecture on JAlgoArena Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Aug 2018 10:02:19 +0200</lastBuildDate>
+    
+	<atom:link href="https://jalgoarena.github.io/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://jalgoarena.github.io/blog/microservices/</link>
+      <pubDate>Mon, 27 Aug 2018 10:02:19 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/microservices/</guid>
+      <description>Microservices done right Nowadays every one is speaking about microservices and you can get an impression they are everywhere. There is obviously a reason for that, as they solve significant problem we face with monolithic applications - dealing with complexity and possibility to scale our software to meet the ever growing needs.
+Now, you need to realise that microservice definitions are not equal - I do not think there is already community approved single definition of microservice - and yet there is still many misleading or just wrong ones around.</description>
+    </item>
+    
+  </channel>
+</rss>
