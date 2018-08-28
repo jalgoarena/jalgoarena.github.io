@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jalgoarena.github.io/blog/redesign-submissions/</loc>
+    <lastmod>2018-08-28T09:07:09+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jalgoarena.github.io/blog/microservices/</loc>
     <lastmod>2018-08-27T10:02:19+02:00</lastmod>
   </url>
@@ -64,7 +69,7 @@
   
   <url>
     <loc>https://jalgoarena.github.io/blog/</loc>
-    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
+    <lastmod>2018-08-28T09:07:09+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -92,17 +97,23 @@
   
   <url>
     <loc>https://jalgoarena.github.io/categories/general/</loc>
-    <lastmod>2018-08-07T06:26:36+02:00</lastmod>
+    <lastmod>2018-08-28T09:07:09+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jalgoarena.github.io/</loc>
-    <lastmod>2018-08-27T10:02:19+02:00</lastmod>
+    <lastmod>2018-08-28T09:07:09+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://jalgoarena.github.io/company/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jalgoarena.github.io/categories/microservices/</loc>
+    <lastmod>2018-08-28T09:07:09+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
