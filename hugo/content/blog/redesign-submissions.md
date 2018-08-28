@@ -138,8 +138,6 @@ step would be to ask for authorizing solution (even before it's saved):
     "username": "jacek",
     "problemId": "fib",
     "submissionId": "ABCD-1234",
-    "statusCode": "WAITING",
-    "elapsedTime": "-1.0",
     "token": "Bearer 1234...",
     "submissionTime": now()
 }
@@ -148,8 +146,22 @@ step would be to ask for authorizing solution (even before it's saved):
 To make sure submission has been submitted by same user as marked, we need to
 check token against username, and once done we may put all user data into message.
 
-Finally, we miss last bit which is all problem data we need to know to judge solution
-and to later on generate ranking and other stats based on submissions:
+Now, we can request saving solution
+
+* `store-submission`
+{{< highlight json >}}
+{
+    "submission": "save",
+    "sourceCode": "public class ...",
+    "user": {...},
+    "problemId": "fib",
+    "submissionId": "ABCD-1234",
+    "submissionTime": DateTime
+}
+{{< /highlight >}}
+
+Ok, now it's the time to judge solution - although there is missing piece of data about problem,
+we need full details to be able to judge solution:
 
 * `enhance-submission-with-problem`
 {{< highlight json >}}
@@ -159,24 +171,55 @@ and to later on generate ranking and other stats based on submissions:
     "user": {...},
     "problemId": "fib",
     "submissionId": "ABCD-1234",
-    "statusCode": "WAITING",
-    "elapsedTime": "-1.0",
     "submissionTime": now()
 }
 {{< /highlight >}}
 
-Now, we can request saving solution
+And now finally we can sent full submission information to judge:
 
-* `save-new-submission`
+* `judge-submission`
 {{< highlight json >}}
 {
-    "submission": "save",
+    "judge": "submission",
     "sourceCode": "public class ...",
     "user": {...},
     "problem": {...},
     "submissionId": "ABCD-1234",
-    "statusCode": "WAITING",
-    "elapsedTime": "-1.0",
     "submissionTime": now()
 }
 {{< /highlight >}}
+
+Once solution is assessed, we can publish result:
+
+* `publish-result`
+{{< highlight json >}}
+{
+    "result": "publish",
+    "sourceCode": "public class ...",
+    "user": {...},
+    "problem": {...},
+    "submissionId": "ABCD-1234",
+    "statusCode": "COMPLETED",
+    "submissionTime": now(),
+    "elapsedTime": 0.02,
+    "consumedMemory": 12.02,
+    "errorMessage": null,
+    "passedTestCases": 6,
+    "failedTestCases": 0
+}
+{{< /highlight >}}
+
+The last message can be used to:
+
+- store results
+- update submissions
+- publish new submission result event
+
+### Diagram
+
+TBC
+
+### Summary
+
+It is one of first approaches to the design - which is subject to change once 
+proposed design is implemented and challenged. 
