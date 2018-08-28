@@ -4,7 +4,7 @@ description = "How to make submissions message flow easier to understand, scale 
 categories = ["general", "microservices"]
 date = 2018-08-28T09:07:09+02:00
 weight = 20
-draft = false
+draft = true
 +++
 
 ### Intro
@@ -21,6 +21,15 @@ modeling messages - the only way to communicate in a new submissions world.
 
 Having messages will open discussion on what exactly microservices we need
 and how to define them keeping previously posted definition of microservice.
+
+### Pattern Matching based routing
+
+To enable composition of microservices, we need to have a way to easily reconfigure
+message flow so new specialized version of microservice can be plugged before or after
+existing service. 
+
+It can be useful for doing other stuff like caching component put in front of existing
+service to improve performance - in general we want to enable additive design.
 
 ### Submitting new solution
 
@@ -74,5 +83,65 @@ We will have:
 
 As you can see, from UI we only need to invoke `get-problemWithSkeletonCode` and then
 just internally invoke `get-problem`.
+
+Another bit we need is problem ranking, as we display it from problem page (every problem
+owns own ranking) we need to have a way to query for it.
+
+* `get-problemRanking`
+{{< highlight json >}}
+{
+    "ranking": "get",
+    "type": "problem",
+    "problemId": "fib"
+}
+{{< /highlight >}}
+
+The interesting thing is, we need now 2 calls to build all data necessary to display page.
+Interestingly, there is a better way to improve the situation which will be only shortly mentioned in here,
+it's [GraphQL](https://graphql.org/learn/) data query and manipulation language.
+
+#### Submit new solution
+
+Once user solved solution and clicked on submit button, he generates new message:
+
+* `submit-solution-request`
+{{< highlight json >}}
+{
+    "sourceCode": "public class ...",
+    "username": "jacek",
+    "problemId": "fib"
+}
+{{< /highlight >}}
+
+There is now interesting thing to consider, firstly we want to save this submission
+as quickly as possible, but as it is done in asynchronous mode we want to get back
+to user with info he may use to check state of his submission:
+
+* `submit-solution-response`
+{{< highlight json >}}
+{
+    "submissionId": "ABCD-1234"
+}
+{{< /highlight >}}
+
+As you see, in whole asynchronous flow for processing submission the first step is
+synchronous to let user know about accepted submission and the id of it.
+
+Know we may start our message to run whole submission asynchronous flow:
+
+* `submit-solution`
+{{< highlight json >}}
+{
+    "submit": "solution",
+    "type": "new",
+    "sourceCode": "public class ...",
+    "username": "jacek",
+    "problemId": "fib",
+    "submissionId": "ABCD-1234",
+    "statusCode": "WAITING",
+    "elapsedTime": "-1.0",
+    "submissionTime": now()
+}
+{{< /highlight >}}
 
 TBC
