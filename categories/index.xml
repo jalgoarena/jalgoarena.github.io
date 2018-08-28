@@ -32,9 +32,18 @@
     <item>
       <title>General</title>
       <link>https://jalgoarena.github.io/categories/general/</link>
-      <pubDate>Tue, 07 Aug 2018 06:26:36 +0200</pubDate>
+      <pubDate>Tue, 28 Aug 2018 09:07:09 +0200</pubDate>
       
       <guid>https://jalgoarena.github.io/categories/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://jalgoarena.github.io/categories/microservices/</link>
+      <pubDate>Tue, 28 Aug 2018 09:07:09 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/categories/microservices/</guid>
       <description></description>
     </item>
     

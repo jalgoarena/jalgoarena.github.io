@@ -114,7 +114,7 @@
 
 <meta itemprop="datePublished" content="2018-08-28T09:07:09&#43;02:00" />
 <meta itemprop="dateModified" content="2018-08-28T09:07:09&#43;02:00" />
-<meta itemprop="wordCount" content="359">
+<meta itemprop="wordCount" content="856">
 
 
 
@@ -128,7 +128,7 @@
 <time class="post-time"><span class="icon">
   <i class="fa fa-clock-o" aria-hidden="true"></i>
 </span>
-<span>2 minute read</span>
+<span>5 minute read</span>
 <span class="icon">
  <i class="fa fa-pencil" aria-hidden="true"></i>
 </span>
@@ -156,6 +156,15 @@ modeling messages - the only way to communicate in a new submissions world.</p>
 
 <p>Having messages will open discussion on what exactly microservices we need
 and how to define them keeping previously posted definition of microservice.</p>
+
+<h3 id="pattern-matching-based-routing">Pattern Matching based routing</h3>
+
+<p>To enable composition of microservices, we need to have a way to easily reconfigure
+message flow so new specialized version of microservice can be plugged before or after
+existing service.</p>
+
+<p>It can be useful for doing other stuff like caching component put in front of existing
+service to improve performance - in general we want to enable additive design.</p>
 
 <h3 id="submitting-new-solution">Submitting new solution</h3>
 
@@ -214,7 +223,148 @@ that&rsquo;s ideal candidate for composition.</p>
 <p>As you can see, from UI we only need to invoke <code>get-problemWithSkeletonCode</code> and then
 just internally invoke <code>get-problem</code>.</p>
 
-<p>TBC</p>
+<p>Another bit we need is problem ranking, as we display it from problem page (every problem
+owns own ranking) we need to have a way to query for it.</p>
+
+<ul>
+<li><code>get-problemRanking</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;ranking&#34;</span><span class="p">:</span> <span class="s2">&#34;get&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;problem&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;problemId&#34;</span><span class="p">:</span> <span class="s2">&#34;fib&#34;</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>The interesting thing is, we need now 2 calls to build all data necessary to display page.
+Interestingly, there is a better way to improve the situation which will be only shortly mentioned in here,
+it&rsquo;s <a href="https://graphql.org/learn/">GraphQL</a> data query and manipulation language.</p>
+
+<h4 id="submit-new-solution">Submit new solution</h4>
+
+<p>Once user solved solution and clicked on submit button, he generates new message:</p>
+
+<ul>
+<li><code>queue-submission</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;queue&#34;</span><span class="p">:</span> <span class="s2">&#34;submission&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;sourceCode&#34;</span><span class="p">:</span> <span class="s2">&#34;public class ...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;jacek&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;problemId&#34;</span><span class="p">:</span> <span class="s2">&#34;fib&#34;</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>There is now interesting thing to consider, firstly we want to save this submission
+as quickly as possible, but as it is done in asynchronous mode we want to get back
+to user with info he may use to check state of his submission:</p>
+
+<ul>
+<li><code>queue-submission-response</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;submissionId&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCD-1234&#34;</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>As you see, in whole asynchronous flow for processing submission the first step is
+synchronous to let user know about accepted submission and the id of it.</p>
+
+<p>Now we may start our message to run whole submission asynchronous flow, and yes first
+step would be to ask for authorizing solution (even before it&rsquo;s saved):</p>
+
+<ul>
+<li><code>authorize-solution</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;authorize&#34;</span><span class="p">:</span> <span class="s2">&#34;solution&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;sourceCode&#34;</span><span class="p">:</span> <span class="s2">&#34;public class ...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;jacek&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;problemId&#34;</span><span class="p">:</span> <span class="s2">&#34;fib&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionId&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCD-1234&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;token&#34;</span><span class="p">:</span> <span class="s2">&#34;Bearer 1234...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionTime&#34;</span><span class="p">:</span> <span class="err">now()</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>To make sure submission has been submitted by same user as marked, we need to
+check token against username, and once done we may put all user data into message.</p>
+
+<p>Now, we can request saving solution</p>
+
+<ul>
+<li><code>save-submission</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;submission&#34;</span><span class="p">:</span> <span class="s2">&#34;save&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;sourceCode&#34;</span><span class="p">:</span> <span class="s2">&#34;public class ...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">},</span>
+    <span class="nt">&#34;problemId&#34;</span><span class="p">:</span> <span class="s2">&#34;fib&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionId&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCD-1234&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionTime&#34;</span><span class="p">:</span> <span class="err">DateTime</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>Ok, now it&rsquo;s the time to judge solution - although there is missing piece of data about problem,
+we need full details to be able to judge solution:</p>
+
+<ul>
+<li><code>enhance-submission-with-problem</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;problem&#34;</span><span class="p">:</span> <span class="s2">&#34;enhanceSubmission&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;sourceCode&#34;</span><span class="p">:</span> <span class="s2">&#34;public class ...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">},</span>
+    <span class="nt">&#34;problemId&#34;</span><span class="p">:</span> <span class="s2">&#34;fib&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionId&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCD-1234&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionTime&#34;</span><span class="p">:</span> <span class="err">now()</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>And now finally we can sent full submission information to judge:</p>
+
+<ul>
+<li><code>judge-submission</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;judge&#34;</span><span class="p">:</span> <span class="s2">&#34;submission&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;sourceCode&#34;</span><span class="p">:</span> <span class="s2">&#34;public class ...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">},</span>
+    <span class="nt">&#34;problem&#34;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">},</span>
+    <span class="nt">&#34;submissionId&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCD-1234&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionTime&#34;</span><span class="p">:</span> <span class="err">now()</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>Once solution is assessed, we can publish result:</p>
+
+<ul>
+<li><code>publish-result</code>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;result&#34;</span><span class="p">:</span> <span class="s2">&#34;publish&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;sourceCode&#34;</span><span class="p">:</span> <span class="s2">&#34;public class ...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">},</span>
+    <span class="nt">&#34;problem&#34;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">},</span>
+    <span class="nt">&#34;submissionId&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCD-1234&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;statusCode&#34;</span><span class="p">:</span> <span class="s2">&#34;COMPLETED&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;submissionTime&#34;</span><span class="p">:</span> <span class="err">now()</span><span class="p">,</span>
+    <span class="nt">&#34;elapsedTime&#34;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="nt">&#34;consumedMemory&#34;</span><span class="p">:</span> <span class="mf">12.02</span><span class="p">,</span>
+    <span class="nt">&#34;errorMessage&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&#34;passedTestCases&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="nt">&#34;failedTestCases&#34;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span></code></pre></div></li>
+</ul>
+
+<p>The last message can be used to:</p>
+
+<ul>
+<li>store results</li>
+<li>update submissions</li>
+<li>publish new submission result event</li>
+</ul>
+
+<h3 id="diagram">Diagram</h3>
+
+<p><img src="https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission_2.0.png" alt="" /></p>
+
+<h3 id="summary">Summary</h3>
+
+<p>It is one of first approaches to the design - which is subject to change once
+proposed design is implemented and challenged.</p>
 
 
 </div>
@@ -234,7 +384,7 @@ just internally invoke <code>get-problem</code>.</p>
     in <span itemprop="articleSection"><a href="/categories/general/">general</a> and <a href="/categories/microservices/">microservices</a></span>
   
   
-  using <span itemprop="wordCount">359</span> words.
+  using <span itemprop="wordCount">856</span> words.
 </p>
 
         

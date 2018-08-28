@@ -6,10 +6,21 @@
     <description>Recent content in Blogs on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Aug 2018 10:02:19 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 28 Aug 2018 09:07:09 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redesign Submissions</title>
+      <link>https://jalgoarena.github.io/blog/redesign-submissions/</link>
+      <pubDate>Tue, 28 Aug 2018 09:07:09 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/redesign-submissions/</guid>
+      <description>Intro Submissions flow withing JAlgoArena was already re-designed few times, mostly I was focusing on technology and improvements around chosen technology.
+The major upgrade happen when flow has changed from synchronous highly coupled to asynchronous based on apache kafka with decoupled parties of flow.
+Now I would like to stop and rethink all of that, without any technology in a mind. The approach I want to choose is strictly based on requirements, and then modeling messages - the only way to communicate in a new submissions world.</description>
+    </item>
     
     <item>
       <title>Microservices</title>

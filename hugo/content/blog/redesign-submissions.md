@@ -4,7 +4,7 @@ description = "How to make submissions message flow easier to understand, scale 
 categories = ["general", "microservices"]
 date = 2018-08-28T09:07:09+02:00
 weight = 20
-draft = true
+draft = false
 +++
 
 ### Intro
@@ -104,9 +104,10 @@ it's [GraphQL](https://graphql.org/learn/) data query and manipulation language.
 
 Once user solved solution and clicked on submit button, he generates new message:
 
-* `submit-solution-request`
+* `queue-submission`
 {{< highlight json >}}
 {
+    "queue": "submission",
     "sourceCode": "public class ...",
     "username": "jacek",
     "problemId": "fib"
@@ -117,7 +118,7 @@ There is now interesting thing to consider, firstly we want to save this submiss
 as quickly as possible, but as it is done in asynchronous mode we want to get back
 to user with info he may use to check state of his submission:
 
-* `submit-solution-response`
+* `queue-submission-response`
 {{< highlight json >}}
 {
     "submissionId": "ABCD-1234"
@@ -148,7 +149,7 @@ check token against username, and once done we may put all user data into messag
 
 Now, we can request saving solution
 
-* `store-submission`
+* `save-submission`
 {{< highlight json >}}
 {
     "submission": "save",
@@ -217,7 +218,7 @@ The last message can be used to:
 
 ### Diagram
 
-TBC
+![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission_2.0.png)
 
 ### Summary
 
