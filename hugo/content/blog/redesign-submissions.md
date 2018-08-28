@@ -127,15 +127,36 @@ to user with info he may use to check state of his submission:
 As you see, in whole asynchronous flow for processing submission the first step is
 synchronous to let user know about accepted submission and the id of it.
 
-Know we may start our message to run whole submission asynchronous flow:
+Now we may start our message to run whole submission asynchronous flow, and yes first
+step would be to ask for authorizing solution (even before it's saved):
 
-* `submit-solution`
+* `authorize-solution`
 {{< highlight json >}}
 {
-    "submit": "solution",
-    "type": "new",
+    "authorize": "solution",
     "sourceCode": "public class ...",
     "username": "jacek",
+    "problemId": "fib",
+    "submissionId": "ABCD-1234",
+    "statusCode": "WAITING",
+    "elapsedTime": "-1.0",
+    "token": "Bearer 1234...",
+    "submissionTime": now()
+}
+{{< /highlight >}}
+
+To make sure submission has been submitted by same user as marked, we need to
+check token against username, and once done we may put all user data into message.
+
+Finally, we miss last bit which is all problem data we need to know to judge solution
+and to later on generate ranking and other stats based on submissions:
+
+* `enhance-submission-with-problem`
+{{< highlight json >}}
+{
+    "problem": "enhanceSubmission",
+    "sourceCode": "public class ...",
+    "user": {...},
     "problemId": "fib",
     "submissionId": "ABCD-1234",
     "statusCode": "WAITING",
@@ -144,4 +165,18 @@ Know we may start our message to run whole submission asynchronous flow:
 }
 {{< /highlight >}}
 
-TBC
+Now, we can request saving solution
+
+* `save-new-submission`
+{{< highlight json >}}
+{
+    "submission": "save",
+    "sourceCode": "public class ...",
+    "user": {...},
+    "problem": {...},
+    "submissionId": "ABCD-1234",
+    "statusCode": "WAITING",
+    "elapsedTime": "-1.0",
+    "submissionTime": now()
+}
+{{< /highlight >}}
