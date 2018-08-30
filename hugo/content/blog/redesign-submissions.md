@@ -4,19 +4,20 @@ description = "How to make submissions message flow easier to understand, scale 
 categories = ["general", "microservices"]
 date = 2018-08-28T09:07:09+02:00
 weight = 20
+toc = true
 draft = false
 +++
 
-### Intro
+### Submissions flow
 
-Submissions flow withing JAlgoArena was already re-designed few times, mostly
-I was focusing on technology and improvements around chosen technology.
+Submissions flow within JAlgoArena was already re-designed few times, mostly
+I was focusing on improvements around chosen technology.
 
-The major upgrade happen when flow has changed from synchronous highly coupled
-to asynchronous based on apache kafka with decoupled parties of flow.
+The major upgrade happen when submission flow has changed from synchronous highly coupled
+design to asynchronous based on apache kafka with decoupled components.
 
-Now I would like to stop and rethink all of that, without any technology in a mind.
-The approach I want to choose is strictly based on requirements, and then
+Now I would like to stop and rethink all of that, in technology agnostic way.
+The approach I want to choose is strictly based on requirements, then
 modeling messages - the only way to communicate in a new submissions world.
 
 Having messages will open discussion on what exactly microservices we need
