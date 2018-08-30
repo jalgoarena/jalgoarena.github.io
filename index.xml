@@ -6,7 +6,7 @@
     <description>Recent content in JAlgoArena on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Aug 2018 09:07:09 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 30 Aug 2018 08:46:21 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,7 +23,17 @@
     </item>
     
     <item>
-      <title>Redesign Submissions</title>
+      <title>Redesign Submissions (Part 2)</title>
+      <link>https://jalgoarena.github.io/blog/redesign-submissions-2/</link>
+      <pubDate>Thu, 30 Aug 2018 08:46:21 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/redesign-submissions-2/</guid>
+      <description>Note on previous part This is continuation of Redesign Submissions (Part 1) post, where you can find discussion on new design proposal on processing submissions. This post is iteration on described there approach, which brings few improvements
+Problems microservice interaction Thinking about the nature of data we deal with within JAlgoArena - if we consider submissions this set is changing very frequently, with any submission of user, producing large data set.</description>
+    </item>
+    
+    <item>
+      <title>Redesign Submissions (Part 1)</title>
       <link>https://jalgoarena.github.io/blog/redesign-submissions/</link>
       <pubDate>Tue, 28 Aug 2018 09:07:09 +0200</pubDate>
       
