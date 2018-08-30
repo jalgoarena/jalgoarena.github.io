@@ -223,5 +223,6 @@ The last message can be used to:
 
 ### Summary
 
-It is one of first approaches to the design - which is subject to change once 
-proposed design is implemented and challenged. 
+It is one of first approaches to the design - which is subject to change. 
+
+Check the next iteration on [Redesign Submissions (Part 2)](https://jalgoarena.github.io/blog/redesign-submissions-2/) page.
