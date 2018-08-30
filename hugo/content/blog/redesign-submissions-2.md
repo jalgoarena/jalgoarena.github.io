@@ -40,3 +40,9 @@ inform everyone interested that they need to refresh list of problems - keeping 
 ### Diagram
 
 ![](https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission_2.1.png)
+
+### Summary
+
+It is one of first approaches to the design - which is subject to change. 
+
+Check the next iteration on `Redesign Submissions (Part 3)`(coming soon) page.
