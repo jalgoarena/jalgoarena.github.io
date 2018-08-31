@@ -1,6 +1,7 @@
 +++
 title = "Redesign Submissions (Part 2)"
-description = "How to make submissions message flow easier to understand, scale and extend"
+description = "Make submissions message flow easier to understand, scale and extend"
+categories = ["general", "microservices"]
 date = 2018-08-30T08:46:21+02:00
 weight = 20
 draft = false
@@ -30,7 +31,7 @@ of change there is no auto refresh happening for problems.
 Actually we already have solution for such cases, and that's why `problem:changed` is introduced, to asynchronously
 inform everyone interested that they need to refresh list of problems - keeping it up to date.
 
-### Further changes
+### Other changes
 
 * Minor updates to diagram layout and message notation, now it's strict to `<domain>:<action>`
 * `get:problemwithSkeletonCode` is changed to `problem:get` to make it unified with another request to `problems` microservice
@@ -45,4 +46,4 @@ inform everyone interested that they need to refresh list of problems - keeping 
 
 It is one of first approaches to the design - which is subject to change. 
 
-Check the next iteration on `Redesign Submissions (Part 3)`(coming soon) page.
+Check the next iteration on [Redesign Submissions (Part 3)](https://jalgoarena.github.io/blog/redesign-submissions-3/) page.

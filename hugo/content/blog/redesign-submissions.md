@@ -1,6 +1,6 @@
 +++
 title = "Redesign Submissions (Part 1)"
-description = "How to make submissions message flow easier to understand, scale and extend"
+description = "Make submissions message flow easier to understand, scale and extend"
 categories = ["general", "microservices"]
 date = 2018-08-28T09:07:09+02:00
 weight = 20
