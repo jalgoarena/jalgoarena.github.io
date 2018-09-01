@@ -61,4 +61,4 @@ on problem web page.
 
 It is one of first approaches to the design - which is subject to change. 
 
-Check the next iteration on `Redesign Submissions (Part 4)`(coming soon) page.
+Check the next iteration on [Redesign Submissions (Part 4)](https://jalgoarena.github.io/blog/redesign-submissions-4/) page.
