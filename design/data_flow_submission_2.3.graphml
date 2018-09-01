@@ -581,27 +581,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e14" source="n1" target="n6">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="50.0" sy="-12.96875" tx="-56.5" ty="0.0">
-            <y:Point x="278.42021924482333" y="500.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" anchorX="20.13280469404208" anchorY="-170.9381103515625" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" upX="-1.0" upY="-6.123233995736766E-17" verticalTextPosition="bottom" visible="true" width="152.18359375" x="1.999992194042079" y="-323.1217041015625">ranking:get,type:problem<y:LabelModel>
-              <y:RotatedSliderEdgeLabelModel angle="0.0" autoRotationEnabled="true" distance="2.0" distanceRelativeToEdge="true" mode="side_slider"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:RotatedSliderEdgeLabelModelParameter invertingSign="false" ratio="0.5" segment="0"/>
-            </y:ModelParameter>
-            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
-          </y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e15" source="n14" target="n5">
+    <edge id="e14" source="n14" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="39.0" tx="0.0" ty="-39.0"/>
@@ -619,7 +599,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e16" source="n18" target="n17">
+    <edge id="e15" source="n18" target="n17">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -631,7 +611,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e17" source="n16" target="n20">
+    <edge id="e16" source="n16" target="n20">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-23.526398363511248" ty="3.166260657734483"/>
@@ -649,7 +629,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e18" source="n14" target="n18">
+    <edge id="e17" source="n14" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -667,7 +647,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e19" source="n4" target="n9">
+    <edge id="e18" source="n4" target="n9">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="18.0" sy="-1.0" tx="18.0" ty="-15.0"/>
@@ -679,7 +659,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e20" source="n9" target="n4">
+    <edge id="e19" source="n9" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-16.0" sy="0.0" tx="-16.0" ty="5.0"/>
@@ -691,7 +671,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e21" source="n19" target="n16">
+    <edge id="e20" source="n19" target="n16">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -703,7 +683,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e22" source="n16" target="n6">
+    <edge id="e21" source="n16" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="-17.83333333333337" tx="0.0" ty="0.0"/>
@@ -715,7 +695,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e23" source="n20" target="n6">
+    <edge id="e22" source="n20" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -733,7 +713,7 @@ Store<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e24" source="n20" target="n21">
+    <edge id="e23" source="n20" target="n21">
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
