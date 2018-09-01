@@ -6,7 +6,7 @@
     <description>Recent content in JAlgoArena on JAlgoArena Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Aug 2018 12:48:16 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 07:37:21 +0200</lastBuildDate>
     
 	<atom:link href="https://jalgoarena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,17 @@
       <description>Welcome After you open JAlgoArena Web UI - you will see below page. You will have access to menu moving you to other screens.
  Note: the right up corner green bulb indicates that you are connected with WebSocket service. This service will bring you live updates to rankings and submissions.
  Problems Problems screen give you access to full list of problems. There is few things which are worth to know:</description>
+    </item>
+    
+    <item>
+      <title>Redesign Submissions (Part 4)</title>
+      <link>https://jalgoarena.github.io/blog/redesign-submissions-4/</link>
+      <pubDate>Sat, 01 Sep 2018 07:37:21 +0200</pubDate>
+      
+      <guid>https://jalgoarena.github.io/blog/redesign-submissions-4/</guid>
+      <description>Note on previous part This is continuation of Redesign Submissions (Part 3) post, where you can find discussion on new design proposal on processing submissions. This post is iteration on described there approach, which brings few improvements.
+Addressing open items In the previous post we have mentioned few problems, which are tackled within this iteration.
+Results Store Firstly, there is new store - Results Store. Initially it was separated, and them moved again to single Submissions Store as it required checking state when displaying submissions to users.</description>
     </item>
     
     <item>

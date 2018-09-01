@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Redesign Submissions (Part 3) </title>
+  <title> Redesign Submissions (Part 4) </title>
 
   
   <meta name="description" content="Make submissions message flow easier to understand, scale and extend"> 
@@ -21,20 +21,16 @@
   <meta name="author" content="JAlgoArena">
 
 
-  <meta property="og:title" content="Redesign Submissions (Part 3)" />
+  <meta property="og:title" content="Redesign Submissions (Part 4)" />
 <meta property="og:description" content="Make submissions message flow easier to understand, scale and extend" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jalgoarena.github.io/blog/redesign-submissions-3/" />
+<meta property="og:url" content="https://jalgoarena.github.io/blog/redesign-submissions-4/" />
 
 
 
-<meta property="article:published_time" content="2018-08-31T12:48:16&#43;02:00"/>
+<meta property="article:published_time" content="2018-09-01T07:37:21&#43;02:00"/>
 
-<meta property="article:modified_time" content="2018-08-31T12:48:16&#43;02:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-09-01T07:37:21&#43;02:00"/>
 
 
 
@@ -42,18 +38,22 @@
 
 
 
-  
 
 
 
 
   
+
+
+
+
+  
   
   
   
   
 
-  <link rel="canonical" href="https://jalgoarena.github.io/blog/redesign-submissions-3/">  
+  <link rel="canonical" href="https://jalgoarena.github.io/blog/redesign-submissions-4/">  
 
   <link rel="shortcut icon" type="image/png" href="/img/favicons/favicon.ico">
 
@@ -108,20 +108,20 @@
   <main>
 <div class="push-center" itemscope itemtype="http://schema.org/BlogPosting">
     
-<meta itemprop="name" content="Redesign Submissions (Part 3)">
+<meta itemprop="name" content="Redesign Submissions (Part 4)">
 <meta itemprop="description" content="Make submissions message flow easier to understand, scale and extend">
 
 
-<meta itemprop="datePublished" content="2018-08-31T12:48:16&#43;02:00" />
-<meta itemprop="dateModified" content="2018-08-31T12:48:16&#43;02:00" />
-<meta itemprop="wordCount" content="423">
+<meta itemprop="datePublished" content="2018-09-01T07:37:21&#43;02:00" />
+<meta itemprop="dateModified" content="2018-09-01T07:37:21&#43;02:00" />
+<meta itemprop="wordCount" content="360">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <div id="hero">
-    <h2 itemprop="headline">  Redesign Submissions (Part 3)</h2>
+    <h2 itemprop="headline">  Redesign Submissions (Part 4)</h2>
     
 <blockquote itemprop="description">Make submissions message flow easier to understand, scale and extend</blockquote>
 
@@ -133,7 +133,7 @@
  <i class="fa fa-pencil" aria-hidden="true"></i>
 </span>
 
-  Published: <time datetime="2018-08-31T12:48:16&#43;02:00">31 Aug, 2018</time>
+  Published: <time datetime="2018-09-01T07:37:21&#43;02:00">1 Sep, 2018</time>
 
 </time>
 </div>
@@ -144,67 +144,60 @@
 
 <h3 id="note-on-previous-part">Note on previous part</h3>
 
-<p>This is continuation of <a href="https://jalgoarena.github.io/blog/redesign-submissions-2/">Redesign Submissions (Part 2)</a> post, where
+<p>This is continuation of <a href="https://jalgoarena.github.io/blog/redesign-submissions-3/">Redesign Submissions (Part 3)</a> post, where
 you can find discussion on new design proposal on processing submissions. This post is iteration on described there
 approach, which brings few improvements.</p>
 
-<h3 id="small-business-feature-change-significant-architecture-meaning">Small business feature change, significant architecture meaning</h3>
+<h3 id="addressing-open-items">Addressing open items</h3>
 
-<p>There was one cool (my subjective opinion &hellip;) feature, which I was really happy about which was introduced already some time
-ago. The feature was about adding bonus point to fastest solution for a given problem. In the first place, it really looks
-nice as the feature to have, and allows to distinct best solutions from the tree of other solutions.</p>
+<p>In the previous post we have mentioned few problems, which are tackled within this iteration.</p>
 
-<p>But, there is many problems with this approach:</p>
+<h4 id="results-store">Results Store</h4>
 
-<ul>
-<li>users complained that assigning bonus point is unfair. And this actually was true, as most of problems can be solved
-with well designed solutions in less than millisecond, the winning was the matter of microseconds! And you can imagine
-that luck was crucial in winning this point (many factors counted besides of efficiency, like how busy server was at the
-time of assessing solution).</li>
-<li>it required context of all users submissions to tell how many points user will get for given submission. It was problematic
-because submissions final points calculation could happen only in aggregate step</li>
-<li>it made whole calculation of points per submission more complex which required good understanding of problem ranking
-itself</li>
-</ul>
-
-<p>Giving up on this feature had interesting impact:</p>
+<p>Firstly, there is new store - <code>Results Store</code>. Initially it was separated, and them moved again to single <code>Submissions Store</code>
+as it required checking state when displaying submissions to users. But now, instead of keeping submission state we will go
+to separate stores which has different use cases and schema.</p>
 
 <ul>
-<li>new points service is created, which enriches every successful submission with points user gained for solving it (it
-is just based on particular submission, without penalty points)</li>
-<li>now we can send points per submission back to user with <code>submission:list</code> message response</li>
-<li>all of that makes <code>ranking</code> microservice smaller and focused just on presenting and building ranking without points
-calculation</li>
+<li><p><code>Submissions Store</code> - the main purpose is to collect very initial data on submissions, and then report back to users
+so they can monitor own submissions. This is like asynchronous response effect to user request, and that&rsquo;s the only purpose.
+It&rsquo;s considered as secondary data - but still it&rsquo;s useful in investigation where submission is present and there is lack
+of result.</p></li>
+
+<li><p><code>Results Store</code> - main data set within <code>JAlgoArena</code> - that&rsquo;s the place where we store all submission data together with
+assessment result and points gained for solving the problem. It&rsquo;s main source for calculating ranking, and it&rsquo;s displaying
+all results on profile page of user.</p></li>
 </ul>
+
+<h4 id="problem-ranking">Problem Ranking</h4>
+
+<p>As we display on user profile page results with points per solution - there is no need anymore to display it on UI on
+problem page - it was a bit of disconnected data which was necessary to understand best time bonus point - which is not
+a case anymore. It simplifies architecture and UI a bit - making it more consistent and focused.</p>
 
 <h3 id="other-changes">Other changes</h3>
 
 <ul>
 <li>layout improvements</li>
-<li>add missing <code>submissions:list</code> message from <code>ranking</code> microservice to <code>Submissions Store</code></li>
-<li>change color for store components</li>
-<li>rename <code>problems</code> microservice to <code>Problems Store</code></li>
 </ul>
 
 <h3 id="diagram">Diagram</h3>
 
-<p><img src="https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission_2.2.png" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/jalgoarena/jalgoarena.github.io/master/images/data_flow_submission_2.3.png" alt="" /></p>
 
-<h3 id="open-items">Open items</h3>
+<h3 id="open-questions">Open questions</h3>
 
 <ul>
-<li>as you see now, from <code>results</code> microservice we send <code>result:add</code> - which does not correspond well to <code>Submissions Store</code>,
-possibly there is a need for separate store for results?</li>
-<li>I would put problem ranking under question, if it&rsquo;s needed at all on problem page. Considering we have changed the way
-of how points are calculated, and user can see them on submissions page there is no more need for additional clarity
-on problem web page.</li>
+<li>should we keep synchronous calls to <code>Results Store</code> and <code>Submissions Store</code> - or would it be better to model it in
+asynchronous request/reply way, using two related topics? That would give nice asynchronous flow running without
+blocking calls (besides of database call which anyway is blocking).</li>
 </ul>
 
 <h3 id="summary">Summary</h3>
 
 <p>It is one of first approaches to the design - which is subject to change.</p>
 
-<p>Check the next iteration on <a href="https://jalgoarena.github.io/blog/redesign-submissions-4/">Redesign Submissions (Part 4)</a> page.</p>
+<p>Check the next iteration on <code>Redesign Submissions (Part 5)</code>(coming soon) page.</p>
 
 
 </div>
@@ -217,14 +210,14 @@ on problem web page.</li>
       by <span itemprop="author">JAlgoArena</span>
     
   
-  <time datetime="2018-08-31T12:48:16&#43;02:00">
-    31 Aug, 2018
+  <time datetime="2018-09-01T07:37:21&#43;02:00">
+    1 Sep, 2018
   </time>
   
     in <span itemprop="articleSection"><a href="/categories/general/">general</a> and <a href="/categories/microservices/">microservices</a></span>
   
   
-  using <span itemprop="wordCount">423</span> words.
+  using <span itemprop="wordCount">360</span> words.
 </p>
 
         
