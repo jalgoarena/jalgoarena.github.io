@@ -70,7 +70,7 @@ Secondly, amount of points which depends on time penalty:
   * e.g. if you submitted 2 times problem solution, 1 point will be taken from your final result
   * penalty is calculated till minimal amount of points for passed submission which is 1 point
   * there is no penalty for `COMPILE_ERROR` or `WAITING` - although the second should be reported to admins as it indicates
-  platform error
+  platform error (if stays there for longer than 5 min)
 * Only best of your submissions per problem is considered within your score
 * In case of two people having same amount of points, the one who solved more problems will be higher in the ranking
 
